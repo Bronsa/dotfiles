@@ -86,7 +86,6 @@
                            "misc.el"
                            "modes.el"
                            "tabbar-conf.el"
-                           "yasnippet-conf.el"
                            "hooks.el"
                            "look-and-feel.el"))
  (load-config-file config-file))
