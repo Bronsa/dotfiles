@@ -1,0 +1,72 @@
+[submodule "lib/ac-slime"]
+	path = lib/ac-slime
+	url = https://github.com/purcell/ac-slime.git
+[submodule "lib/align-cljlet"]
+	path = lib/align-cljlet
+	url = https://github.com/gstamp/align-cljlet.git
+[submodule "lib/auto-complete"]
+	path = lib/auto-complete
+	url = https://github.com/m2ym/auto-complete.git
+[submodule "lib/clojure-mode"]
+	path = lib/clojure-mode
+	url = https://github.com/technomancy/clojure-mode.git
+[submodule "lib/elein"]
+	path = lib/elein
+	url = https://github.com/remvee/elein.git
+[submodule "lib/inf-ruby"]
+	path = lib/inf-ruby
+	url = https://github.com/nonsequitur/inf-ruby.git
+[submodule "lib/magit"]
+	path = lib/magit
+	url = https://github.com/magit/magit.git
+[submodule "lib/rsense"]
+	path = lib/rsense
+	url = https://github.com/m2ym/rsense.git
+[submodule "lib/ruby-electric"]
+	path = lib/ruby-electric
+	url = https://github.com/qoobaa/ruby-electric.git
+[submodule "lib/slime"]
+	path = lib/slime
+	url = https://github.com/technomancy/slime.git
+[submodule "lib/smex"]
+	path = lib/smex
+	url = https://github.com/nonsequitur/smex.git
+[submodule "lib/undo-tree"]
+	path = lib/undo-tree
+	url = https://github.com/emacsmirror/undo-tree.git
+[submodule "lib/cedet"]
+	path = lib/cedet
+	url = https://github.com/emacsmirror/cedet.git
+[submodule "lib/yasnippet"]
+	path = lib/yasnippet
+	url = https://github.com/emacsmirror/yasnippet.git
+[submodule "lib/backup-dir"]
+	path = lib/backup-dir
+	url = https://github.com/emacsmirror/backup-dir.git
+[submodule "lib/eval-sexp-fu"]
+	path = lib/eval-sexp-fu
+	url = https://github.com/emacsmirror/eval-sexp-fu.git
+[submodule "lib/highglight"]
+	path = lib/highglight
+	url = https://github.com/emacsmirror/highlight.git
+[submodule "lib/markdown-mode"]
+	path = lib/markdown-mode
+	url = https://github.com/emacsmirror/markdown-mode.git
+[submodule "lib/multi-eshell"]
+	path = lib/multi-eshell
+	url = https://github.com/emacsmirror/multi-eshell.git
+[submodule "lib/linum-plus"]
+	path = lib/linum-plus
+	url = https://github.com/emacsmirror/linum-plus.git
+[submodule "lib/paredit"]
+	path = lib/paredit
+	url = https://github.com/emacsmirror/paredit.git
+[submodule "lib/php-mode"]
+	path = lib/php-mode
+	url = https://github.com/ejmr/php-mode.git
+[submodule "lib/slamhound"]
+	path = lib/slamhound
+	url = https://github.com/technomancy/slamhound.git
+[submodule "lib/ecb"]
+	path = lib/ecb
+	url = https://github.com/emacsmirror/ecb.git
