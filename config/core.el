@@ -23,6 +23,7 @@
                     "ecb"
                     "elein"
                     "eval-sexp-fu"
+                    "gist " 
                     "highlight"
                     "inf-ruby"
                     "linum-plus"
@@ -55,6 +56,7 @@
                    'ecb
                    'elein
                    'eval-sexp-fu
+                   'gist
                    'highlight
                    'inf-ruby
                    'linum+
