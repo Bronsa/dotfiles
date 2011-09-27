@@ -70,3 +70,6 @@
 [submodule "lib/ecb"]
 	path = lib/ecb
 	url = https://github.com/emacsmirror/ecb.git
+[submodule "lib/gist"]
+	path = lib/gist
+	url = https://github.com/defunkt/gist.el.git
