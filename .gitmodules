@@ -49,6 +49,9 @@
 [submodule "lib/highglight"]
 	path = lib/highglight
 	url = https://github.com/emacsmirror/highlight.git
+[submodule "lib/highlight"]
+	path = lib/highlight
+	url = https://github.com/emacsmirror/highlight.git
 [submodule "lib/markdown-mode"]
 	path = lib/markdown-mode
 	url = https://github.com/emacsmirror/markdown-mode.git
@@ -72,4 +75,7 @@
 	url = https://github.com/emacsmirror/ecb.git
 [submodule "lib/gist"]
 	path = lib/gist
+	url = https://github.com/defunkt/gist.el.git
+[submodule "lib/gist.el"]
+	path = lib/gist.el
 	url = https://github.com/defunkt/gist.el.git
