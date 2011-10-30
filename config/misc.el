@@ -38,7 +38,9 @@
  slime-protocol-version 'ignore
  inferior-lisp-program  "lein repl"
  slime-net-coding-system 'utf-8-unix
- ecb-tip-of-the-day nil)
+ ecb-tip-of-the-day nil
+
+ multi-eshell-function '(eshell))
 
 (make-variable-buffer-local 'backup-inhibited)
 (smex-initialize)
