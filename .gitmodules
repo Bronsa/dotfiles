@@ -34,9 +34,6 @@
 [submodule "lib/undo-tree"]
 	path = lib/undo-tree
 	url = https://github.com/emacsmirror/undo-tree.git
-[submodule "lib/cedet"]
-	path = lib/cedet
-	url = https://github.com/emacsmirror/cedet.git
 [submodule "lib/yasnippet"]
 	path = lib/yasnippet
 	url = https://github.com/emacsmirror/yasnippet.git
@@ -67,9 +64,6 @@
 [submodule "lib/slamhound"]
 	path = lib/slamhound
 	url = https://github.com/technomancy/slamhound.git
-[submodule "lib/ecb"]
-	path = lib/ecb
-	url = https://github.com/emacsmirror/ecb.git
 [submodule "lib/gist"]
 	path = lib/gist
 	url = https://github.com/defunkt/gist.el.git
