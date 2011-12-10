@@ -56,7 +56,7 @@
                    'gist
                    'highlight
                    'inf-ruby
-;                   'isearch+
+                   'isearch+
                    'linum+
                    'magit
                    'markdown-mode
