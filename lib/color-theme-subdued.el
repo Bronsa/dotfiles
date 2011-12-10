@@ -52,6 +52,7 @@ Based on the Tango color palette."
      ;; Search
      (isearch ((t (:foreground "#080808" :background "#edd400"))))
      (isearch-lazy-highlight-face ((t (:foreground "#080808" :background "#1e2320"))))
+     (isearch-fail ((t (:background "red"))))
 
      ;; Emacs Interface
      (fringe ((t (:background "#0f0f0f"))))

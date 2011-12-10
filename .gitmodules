@@ -73,3 +73,6 @@
 [submodule "lib/gist"]
 	path = lib/gist
 	url = https://github.com/defunkt/gist.el.git
+[submodule "lib/iseach+"]
+	path = lib/iseach+
+	url = https://github.com/emacsmirror/isearch-plus.git

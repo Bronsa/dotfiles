@@ -38,7 +38,6 @@
  slime-protocol-version 'ignore
  inferior-lisp-program  "lein repl"
  slime-net-coding-system 'utf-8-unix
- ecb-tip-of-the-day nil
 
  multi-eshell-function '(eshell))
 
@@ -60,9 +59,6 @@
 (yas/initialize)
 (yas/load-directory yas/root-directory)
 
-(custom-set-variables
- '(ecb-options-version "2.40"))
-
 (setq sprunge-suffixes (make-hash-table :test 'equal))
 (puthash "Clojure" "cl" sprunge-suffixes)
 (puthash "Shell-script" "sh" sprunge-suffixes)
@@ -82,3 +78,8 @@
     (insert (shell-command-to-string (concat "curl -F 'sprunge=<" filename "' http://sprunge.us")))
     (delete-char -1) ; Newline after URL
     (insert suffix "\n")))
+
+
+(defalias 'emacs 'find-file)
+(defalias 'open 'find-file)
+(defalias 'openo 'find-file-other-window)

@@ -5,7 +5,6 @@
 (global-hl-line-mode)
 (global-visual-line-mode 1)
 (global-ede-mode 1)
-(semantic-load-enable-code-helpers)
 (partial-completion-mode 1)
 (global-font-lock-mode t)
 (line-number-mode 1)

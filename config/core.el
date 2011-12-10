@@ -16,16 +16,15 @@
                     "align-cljlet"
                     "auto-complete"
                     "backup-dir"
-                    "cedet/common"
                     "clojure-mode"
                     "color-theme"
                     "durendal"
-                    "ecb"
                     "elein"
                     "eval-sexp-fu"
                     "gist"
                     "highlight"
                     "inf-ruby"
+                    "iseach+"
                     "linum-plus"
                     "magit"
                     "markdown-mode"
@@ -47,18 +46,17 @@
                    'auto-complete
                    'auto-complete-config
                    'backup-dir
-                   'cedet
                    'clojure-mode
                    'color-theme
                    'color-theme-subdued
                    'clojure-test-mode
                    'dircolors
-                   'ecb
                    'elein
                    'eval-sexp-fu
                    'gist
                    'highlight
                    'inf-ruby
+;                   'isearch+
                    'linum+
                    'magit
                    'markdown-mode
@@ -79,6 +77,8 @@
                    'yasnippet
                    ))
              (require lib))
+
+(eval-after-load "isearch" '(require 'isearch+))
 
 ;; Load config files
 (dolist (config-file (list "auto-complete-conf.el"
