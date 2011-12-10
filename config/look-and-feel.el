@@ -4,6 +4,8 @@
 ;;enable visual feedback on selections
 (setq-default transient-mark-mode t)
 
+(set-frame-font "DejaVu Sans Mono-9")
+
 (setq
      ;; Don't show a cursor in other windows
      cursor-in-non-selected-windows nil
