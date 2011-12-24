@@ -1,0 +1,128 @@
+nopaste /home/bronsa/f
+nopaste ~/f
+nopaste ~/f
+nopate parser.clj
+nopaste parser.clj
+nopaste parser.clj
+nopaste parser.clj
+nopaste ~/f
+nopaste f
+nopaste zip.clj
+nopaste zip.clj
+nopaste ~/f
+nopaste f
+nopaste f
+nopaste ~/f
+nopaste ~/f
+nopaste ~/f
+nopaste parser.clj
+..
+..
+..
+ls
+find *.clj seesaw/ | xargs grep "keystroke"
+~
+recordmydesktop 
+ls
+~
+recordmydesktop 
+rm out-1.ogv
+~
+recordmydesktop 
+mplayer out-1.ogv
+mplayer out.ogv
+rm out.ogv
+ffmpeg -i out-1.ogv  out.avi
+mplayer out.avi
+rm parser.clj.1 
+~
+recordmydesktop --help
+recode-sr-latin
+recordmydesktop 
+ls
+~
+ls
+rm out.avi
+rm out-1.ogv
+rm out.ogv 
+ls
+cat f
+rm f
+~
+recordmydesktop 
+ls
+rm out.ogv 
+~
+recordmydesktop 
+~
+recordmydesktop --windowid=0x2c00001 --no-sound --no-frame
+recordmydesktop --windowid=0x2c41cf1 --no-sound --no-frame
+recordmydesktop --windowid=0x2c00001 --no-sound --no-frame
+recordmydesktop --windowid=0x2c111d2 --no-sound --no-frame
+~
+recordmydesktop --no-sound --no-frame
+~k
+ls
+rm out.ogv 
+~
+recordmydesktop --no-sound --no-frame
+s
+ls
+~
+recordmydesktop --no-sound --no-frame
+ls
+rm out-1.ogv
+rm out.ogv 
+ls
+mv ln.java LineNumbering.java
+java LineNumbering.java 
+javac LineNumbering.java 
+java -cp LineNumbering.class 
+java  LineNumbering.class 
+java  LineNumbering
+ls
+rm *.class
+ls
+emacs LineNumbering.java 
+javac LineNumbering.java 
+javac LineNumbering.java 
+javac LineNumbering.java 
+javac LineNumbering.java 
+java LineNumbering\$1.class
+java LineNumbering
+javac LineNumbering.java 
+java LineNumbering
+javac LineNumbering.java 
+javac LineNumbering.java 
+java LineNumbering
+javac LineNumbering.java 
+javac LineNumbering.java 
+javac LineNumbering.java 
+javac LineNumbering.java 
+java LineNumbering
+cd clojure/src/clj/
+ls
+cd clojure/
+cat core.clj |wc -l
+emacs core_deftype.clj
+emacs core.clj 
+ls
+rm grammar.clj 
+ls
+ls
+rm structural_editing.clj.2 
+..
+..
+ls
+cd om
+ls
+..
+..
+git add *
+git commit -a
+lein swank
+lein plugin install swank-clojure 1.3.3
+killall java
+killall java -9
+lein repl
+lein repl
