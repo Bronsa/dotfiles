@@ -24,7 +24,7 @@
                     "gist"
                     "highlight"
                     "inf-ruby"
-                    "iseach+"
+                    "isearch+"
                     "linum-plus"
                     "magit"
                     "markdown-mode"
