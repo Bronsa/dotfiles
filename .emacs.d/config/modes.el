@@ -5,7 +5,7 @@
 (global-hl-line-mode)
 (global-visual-line-mode 1)
 (global-ede-mode 1)
-(partial-completion-mode 1)
+;; (partial-completion-mode 1)
 (global-font-lock-mode t)
 (line-number-mode 1)
 (column-number-mode 1)

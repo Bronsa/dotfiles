@@ -3,7 +3,9 @@
         (list (cond
                ((memq major-mode '(shell-mode term-mode eshell-mode))
                 "Shell")
-               ((or (equal (current-buffer) "*slime-source*") (memq  major-mode '(slime-mode slime-repl-mode compilation-mode sldb-mode slime-inspector-mode)))
+               ((or (equal (current-buffer) "*slime-source*")
+                    (equal "*inferior-lisp*" (buffer-name b))
+                    (memq  major-mode '(slime-mode slime-repl-mode compilation-mode sldb-mode slime-inspector-mode)))
                 "Slime")
                ((memq major-mode
                       '(erc-mode))
@@ -26,11 +28,11 @@
                                 (equal "*Buffer List*" (buffer-name b))
                                 (equal "*slime-events*" (buffer-name b))
                                 (equal "*Shell Command Output*" (buffer-name b))
-                                (equal "*inferior-lisp*" (buffer-name b))
                                 (equal "*elein-swank*" (buffer-name b))
                                 (equal "*Ido Completions*" (buffer-name b))
                                 (equal "*Completions*" (buffer-name b))
                                 (equal "*Compile-Log*" (buffer-name b))
+                                (equal "*Directory*" (buffer-name b))
                                 (equal "*Process List*" (buffer-name b))
                                 (equal "*Disabled Command*" (buffer-name b))) nil)
                            ((buffer-file-name b) b)
