@@ -11,7 +11,6 @@
 (column-number-mode 1)
 (transient-mark-mode t)
 (delete-selection-mode t)
-(yas/global-mode t)
 (global-linum-mode t)
 (global-undo-tree-mode 1)
 (tabbar-mode 1)
