@@ -34,9 +34,6 @@
 [submodule ".emacs.d/lib/undo-tree"]
 	path = .emacs.d/lib/undo-tree
 	url = https://github.com/emacsmirror/undo-tree.git
-[submodule ".emacs.d/lib/yasnippet"]
-	path = .emacs.d/lib/yasnippet
-	url = https://github.com/emacsmirror/yasnippet.git
 [submodule ".emacs.d/lib/backup-dir"]
 	path = .emacs.d/lib/backup-dir
 	url = https://github.com/emacsmirror/backup-dir.git
@@ -70,3 +67,12 @@
 [submodule ".emacs.d/lib/isearch+"]
 	path = .emacs.d/lib/isearch+
 	url = https://github.com/emacsmirror/isearch-plus.git
+[submodule ".emacs.d/lib/tree-mode"]
+	path = .emacs.d/lib/tree-mode
+	url = https://github.com/emacsmirror/tree-mode.git
+[submodule ".emacs.d/lib/windata"]
+	path = .emacs.d/lib/windata
+	url = https://github.com/emacsmirror/windata.git
+[submodule ".emacs.d/lib/dirtree"]
+	path = .emacs.d/lib/dirtree
+	url = https://github.com/zkim/emacs-dirtree.git

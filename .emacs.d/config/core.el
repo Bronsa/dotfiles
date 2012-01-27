@@ -18,6 +18,7 @@
                     "backup-dir"
                     "clojure-mode"
                     "color-theme"
+                    "dirtree"
                     "durendal"
                     "elein"
                     "eval-sexp-fu"
@@ -36,8 +37,9 @@
                     "slamhound"
                     "slime"
                     "smex"
+                    "tree-mode"
                     "undo-tree"
-                    "yasnippet"))
+                    "windata"))
   (add-lib-path path))
 
 ;; Require libs
@@ -51,6 +53,7 @@
                    'color-theme-subdued
                    'clojure-test-mode
                    'dircolors
+                   'dirtree
                    'elein
                    'eval-sexp-fu
                    'gist
@@ -74,7 +77,6 @@
                    'tabbar
                    'undo-tree
                    'window-resize
-                   'yasnippet
                    ))
              (require lib))
 

@@ -99,19 +99,12 @@ export TERM="xterm-256color"
 export EDITOR="emacsclient -c -nw"
 alias EMACS=/usr/bin/emacs
 alias emacs='emacsclient -c -nw'
-alias xemacs='emacsclient -c -n -e "(set-background-color \"black\")(set-mouse-color \"white\")"'
+alias xemacs='emacsclient -c -n -e (set-mouse-color \"white\")"'
 export BREAK_CHARS="\"#'(),;\`\\|!?[]{}"
-alias clj-head="rlwrap -b \$BREAK_CHARS java -cp $HOME/src/clojure/target/clojure-*-master-SNAPSHOT.jar clojure.main"
-
-clj () {
-    p=$PWD
-    cd ~/.dummy-clj-project/
-    rlwrap -b "$BREAK_CHARS" -c -i -f "$HOME/.clj_completions" -r lein repl
-    cd $p
-}
-
+alias clj-head="rlwrap -b \$BREAK_CHARS java -cp $HOME/src/clojure/target/clojure-1.4.0-master-SNAPSHOT.jar clojure.main"
+alias clj="rlwrap -b \$BREAK_CHARS -c -i -f $HOME/.clj_completions -r java -cp `for i in /home/bronsa/.dummy-clj-prj/lib/*.jar ; do echo -n $i: ; done` clojure.main"
 alias cljs="rlwrap -b \$BREAK_CHARS $HOME/src/clojurescript/script/repljs"
 alias cljsc="$HOME/src/clojurescript/bin/cljsc"
 export ALTERNATE_EDITOR=""
 export PATH=.:$HOME/.lein/bin:$HOME/bin:$PATH
-
+export CLOJURESCRIPT_HOME="$HOME/src/clojurescript/"
