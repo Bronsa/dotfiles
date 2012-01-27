@@ -34,7 +34,6 @@
                     "php-mode"
                     "rsense/etc"
                     "ruby-electric"
-                    "slamhound"
                     "slime"
                     "smex"
                     "tree-mode"
@@ -71,7 +70,6 @@
                    'rsense
                    'ruby-electric
                    'saveplace
-                   'slamhound
                    'slime
                    'smex
                    'tabbar
