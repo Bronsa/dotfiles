@@ -33,8 +33,6 @@
 
  diff-switches "-u"
 
- yas/root-directory (concat dotfiles-etc-dir "snippets")
-
  slime-protocol-version 'ignore
  inferior-lisp-program  "lein repl"
  slime-net-coding-system 'utf-8-unix
@@ -55,9 +53,6 @@
 
 (slime-setup
  '(slime-scratch slime-fancy slime-fuzzy slime-repl))
-
-(yas/initialize)
-(yas/load-directory yas/root-directory)
 
 (setq sprunge-suffixes (make-hash-table :test 'equal))
 (puthash "Clojure" "cl" sprunge-suffixes)
