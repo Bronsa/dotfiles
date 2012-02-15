@@ -24,6 +24,7 @@
                     "eval-sexp-fu"
                     "gist"
                     "highlight"
+                    "imenu+"
                     "inf-ruby"
                     "isearch+"
                     "linum-plus"
@@ -57,6 +58,7 @@
                    'eval-sexp-fu
                    'gist
                    'highlight
+                   'imenu+
                    'inf-ruby
                    'isearch+
                    'linum+

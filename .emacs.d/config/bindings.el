@@ -1,5 +1,5 @@
 ;;mark current function
-;(global-set-key (kbd "C-x C-p")     'mark-defun)
+(global-set-key (kbd "C-c m")     'mark-defun)
 
 ;;paredit
 (global-set-key (kbd "C-M-f")     'paredit-forward)

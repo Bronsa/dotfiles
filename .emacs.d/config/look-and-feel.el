@@ -52,6 +52,7 @@
 
 ;; Set faces
 (custom-set-faces
+ '(which-func ((t (:foreground "#729fcf"))))
  '(linum ((t (:foreground "gray40" :weight bold)))))
 
 (set-face-attribute
@@ -67,4 +68,3 @@
  :background "black"
  :foreground "gray"
  :box nil)
-

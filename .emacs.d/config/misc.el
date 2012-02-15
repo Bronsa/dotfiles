@@ -37,7 +37,8 @@
  inferior-lisp-program  "lein repl"
  slime-net-coding-system 'utf-8-unix
 
- multi-eshell-function '(eshell))
+ multi-eshell-shell-function '(eshell)
+ multi-eshell-name "*eshell*")
 
 (make-variable-buffer-local 'backup-inhibited)
 (smex-initialize)
@@ -58,6 +59,8 @@
 (puthash "Clojure" "cl" sprunge-suffixes)
 (puthash "Shell-script" "sh" sprunge-suffixes)
 
+(push 'java-mode which-func-modes)
+
 (defun sprunge ()
   "Posts the current buffer to sprunge, and shows the resulting URL in a new buffer"
   (interactive)
@@ -73,7 +76,6 @@
     (insert (shell-command-to-string (concat "curl -F 'sprunge=<" filename "' http://sprunge.us")))
     (delete-char -1) ; Newline after URL
     (insert suffix "\n")))
-
 
 (defalias 'emacs 'find-file)
 (defalias 'open 'find-file)

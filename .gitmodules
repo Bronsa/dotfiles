@@ -76,3 +76,6 @@
 [submodule ".emacs.d/lib/dirtree"]
 	path = .emacs.d/lib/dirtree
 	url = https://github.com/zkim/emacs-dirtree.git
+[submodule ".emacs.d/lib/imenu+"]
+	path = .emacs.d/lib/imenu+
+	url = https://github.com/emacsmirror/imenu-plus.git
