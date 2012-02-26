@@ -1,4 +1,4 @@
-;(toggle-debug-on-error t)
+(toggle-debug-on-error t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-language-environment "UTF-8")
 

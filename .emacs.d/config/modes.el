@@ -6,6 +6,7 @@
 (global-visual-line-mode 1)
 (global-ede-mode 1)
 (which-func-mode t)
+(iswitchb-mode t)
 ;; (partial-completion-mode 1)
 (global-font-lock-mode t)
 (line-number-mode 1)
