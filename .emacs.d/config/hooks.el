@@ -9,6 +9,8 @@
                     ))
   (add-hook hook 'enable-paredit-mode))
 
+(add-hook 'slime-connected-hook (lambda () (slime-repl-send-string "(use 'clojure.repl)")))
+
 (dolist (hook (list 'ruby-electric-mode
                     'inf-ruby-keys
                     (lambda ()
