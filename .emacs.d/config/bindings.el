@@ -101,3 +101,6 @@
 ;; (setcdr (assoc "C-p" shell-bind-key-alist) 'multi-shell-prev)
 ;; (setcdr (assoc "C-n" shell-bind-key-alist) 'multi-shell-prev)
 ;; (multi-term-keystroke-setup)
+
+;; C-M-x eval-defun
+;; C-q ( insert unmatched parenthesis
