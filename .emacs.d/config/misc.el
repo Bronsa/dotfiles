@@ -80,3 +80,55 @@
 (defalias 'emacs 'find-file)
 (defalias 'open 'find-file)
 (defalias 'openo 'find-file-other-window)
+
+;;http://bc.tech.coop/blog/070424.html
+(defun slime-send-dwim (arg)
+  "Send the appropriate forms to CL to be evaluated."
+  (interactive "P")
+  (save-excursion
+    (cond
+      ;;Region selected - evaluate region
+      ((not (equal mark-active nil))
+       (copy-region-as-kill (mark) (point)))
+      ;; At/before sexp - evaluate next sexp
+      ((or (looking-at "\s(")
+           (save-excursion
+             (ignore-errors (forward-char 1))
+             (looking-at "\s(")))
+       (forward-list 1)
+       (let ((end (point))
+             (beg (save-excursion
+                    (backward-list 1)
+                    (point))))
+         (copy-region-as-kill beg end)))
+      ;; At/after sexp - evaluate last sexp
+      ((or (looking-at "\s)")
+           (save-excursion
+             (backward-char 1)
+             (looking-at "\s)")))
+       (if (looking-at "\s)")
+           (forward-char 1))
+       (let ((end (point))
+             (beg (save-excursion
+                    (backward-list 1)
+                    (point))))
+         (copy-region-as-kill beg end)))
+      ;; Default - evaluate enclosing top-level sexp
+      (t (progn
+           (while (ignore-errors (progn
+                                   (backward-up-list)
+                                   t)))
+           (forward-list 1)
+           (let ((end (point))
+                 (beg (save-excursion
+                        (backward-list 1)
+                        (point))))
+             (copy-region-as-kill beg end)))))
+    (set-buffer (slime-output-buffer))
+    (unless (eq (current-buffer) (window-buffer))
+      (pop-to-buffer (current-buffer) t))
+    (goto-char (point-max))
+    (yank)
+    (if arg (progn
+              (slime-repl-return)
+              (other-window 1)))))
