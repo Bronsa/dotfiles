@@ -79,3 +79,15 @@
 [submodule ".emacs.d/lib/imenu+"]
 	path = .emacs.d/lib/imenu+
 	url = https://github.com/emacsmirror/imenu-plus.git
+[submodule ".emacs.d/lib/gh"]
+	path = .emacs.d/lib/gh
+	url = https://github.com/sigma/gh.el.git
+[submodule ".emacs.d/lib/pcache"]
+	path = .emacs.d/lib/pcache
+	url = https://github.com/sigma/pcache.git
+[submodule ".emacs.d/lib/logito"]
+	path = .emacs.d/lib/logito
+	url = https://github.com/sigma/logito.git
+[submodule ".emacs.d/lib/tabulated-list"]
+	path = .emacs.d/lib/tabulated-list
+	url = https://github.com/sigma/tabulated-list.el.git
