@@ -91,3 +91,6 @@
 [submodule ".emacs.d/lib/tabulated-list"]
 	path = .emacs.d/lib/tabulated-list
 	url = https://github.com/sigma/tabulated-list.el.git
+[submodule ".emacs.d/lib/emacs-nav"]
+	path = .emacs.d/lib/emacs-nav
+	url = ./.emacs.d/lib/emacs-nav
