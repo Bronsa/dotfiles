@@ -5,4 +5,5 @@
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.clj\\(s\\)?$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))

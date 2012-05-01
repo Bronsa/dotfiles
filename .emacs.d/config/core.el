@@ -5,11 +5,11 @@
 
 ;; Create a var for this live config dir
 (setq config-dir (file-name-directory
-                       (or (buffer-file-name) load-file-name)))
+                  (or (buffer-file-name) load-file-name)))
 
 ;; Define some helper fns for loading config paths and files
 (defun load-config-file (f)
- (load-file (concat config-dir f)))
+  (load-file (concat config-dir f)))
 
 ;; Add lib paths
 (dolist (path (list "ac-slime"
@@ -23,7 +23,7 @@
                     "elein"
                     "emacs-nav"
                     "eval-sexp-fu"
-        		    "gh"
+                    "gh"
                     "gist"
                     "haskell-mode"
                     "highlight"
@@ -61,7 +61,7 @@
                    'dircolors
                    'dirtree
                    'elein
-                   'emacs-nav
+                   'nav
                    'eval-sexp-fu
                    'gist
                    'haskell-mode
@@ -86,7 +86,7 @@
                    'undo-tree
                    'window-resize
                    ))
-             (require lib))
+  (require lib))
 
 (eval-after-load "isearch" '(require 'isearch+))
 
@@ -100,4 +100,4 @@
                            "tabbar-conf.el"
                            "hooks.el"
                            "look-and-feel.el"))
- (load-config-file config-file))
+  (load-config-file config-file))
