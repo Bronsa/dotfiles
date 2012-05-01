@@ -21,9 +21,11 @@
                     "dirtree"
                     "durendal"
                     "elein"
+                    "emacs-nav"
                     "eval-sexp-fu"
         		    "gh"
                     "gist"
+                    "haskell-mode"
                     "highlight"
                     "imenu+"
                     "inf-ruby"
@@ -59,10 +61,12 @@
                    'dircolors
                    'dirtree
                    'elein
+                   'emacs-nav
                    'eval-sexp-fu
                    'gist
+                   'haskell-mode
                    'highlight
-   ;                'imenu+
+                   'imenu+
                    'inf-ruby
                    'isearch+
                    'linum+
