@@ -91,9 +91,6 @@
 [submodule ".emacs.d/lib/tabulated-list"]
 	path = .emacs.d/lib/tabulated-list
 	url = https://github.com/sigma/tabulated-list.el.git
-[submodule ".emacs.d/lib/emacs-nav"]
-	path = .emacs.d/lib/emacs-nav
-	url = ./.emacs.d/lib/emacs-nav
 [submodule ".emacs.d/lib/haskell-mode"]
 	path = .emacs.d/lib/haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
