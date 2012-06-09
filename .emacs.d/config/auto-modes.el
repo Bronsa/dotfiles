@@ -7,3 +7,4 @@
 (add-to-list 'auto-mode-alist '("\\.clj\\(s\\)?$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.d[i]?\\'" . d-mode))

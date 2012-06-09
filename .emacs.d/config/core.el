@@ -58,6 +58,7 @@
                    'color-theme
                    'color-theme-subdued
                    'clojure-test-mode
+                   'd-mode
                    'dircolors
                    'dirtree
                    'elein
