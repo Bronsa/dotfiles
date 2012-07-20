@@ -59,7 +59,7 @@
 (puthash "Clojure" "cl" sprunge-suffixes)
 (puthash "Shell-script" "sh" sprunge-suffixes)
 
-(push 'java-mode which-func-modes)
+;; (push 'java-mode which-func-modes)
 
 (defun sprunge ()
   "Posts the current buffer to sprunge, and shows the resulting URL in a new buffer"
