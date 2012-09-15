@@ -1,0 +1,167 @@
+(in-package :stumpwm)
+(setf *default-package* :stumpwm)
+
+
+(when *initializing*
+  (mapcar #'load-module '("sbclfix"
+                          "mem"
+                          "uptime"
+                          "mouse"
+                          "mpd"
+                          "net"
+                          "notification"
+                          "cpu"
+                          "autotile"))
+
+  (mpd-connect)
+  (grename "Main")
+  (gnewbg "Web")
+                                        ; (gnewbg "AutoTiled")
+                                        ; (gnewbg "Floating")
+  (banish)
+;  (require 'swank)
+; (swank:create-server 1337)
+    )
+
+
+(defmacro read-file (filename)
+  `(read-line (open ,filename)))
+
+(defun load-data ()
+  (with-open-file (in "/tmp/data")
+    (with-standard-io-syntax
+      (setf *data* (read in)))))
+
+(set-prefix-key (kbd "C-a"))
+(set-fg-color "Gray")
+(set-bg-color "Black")
+(set-border-color "Gray20")
+(set-msg-border-width 10)
+(set-focus-color   "gray40")
+(set-unfocus-color "black")
+(set-normal-gravity :center)
+(set-font "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*" )
+
+(defcommand firefox () ()
+            "run firefox"
+            (run-or-raise "firefox" '(:class "Firefox")))
+
+(clear-window-placement-rules)
+
+(define-frame-preference "Web"
+    (0 t   t :class "Firefox"))
+
+(defcommand close-protected-window () ()
+            (let ((*deny-quit-request* nil))
+              (delete-window)))
+
+(push '(:class "Firefox") *deny-quit-request*)
+
+(defcommand (fprev tile-group) () ()
+            "Cycle through the frame tree to the next frame."
+            (focus-prev-frame (current-group)))
+
+(setf
+ *mode-line-click-hook*
+ (list (lambda (&rest args)
+         (cond
+           ((eq (second args) 1)
+            (run-commands "pull-hidden-next"))
+           ((eq (second args) 2)
+            (run-shell-command "urxvtc"))
+           ((eq (second args) 3)
+            (run-commands "pull-hidden-previous"))
+           ((eq (second args) 4)
+            (run-commands "fnext"))
+           ((eq (second args) 5)
+            (run-commands "fprev"))
+           ((eq (second args) 8)
+            (run-commands "gprev"))
+           ((eq (second args) 9)
+            (run-commands "gnext")))))
+
+                                        ;*debug-level*                 5
+                                        ;*show-command-backtrace*      t
+ *input-completion-type*        :fuzzy
+ *mode-line-pad-y*              0
+ *mode-line-pad-y*              0
+ *autotiling-groups*            (list "AutoTiled")
+ *suppress-abort-messages*      t
+ *float-window-border*          2
+ *float-window-title-height*    8
+ *escape-fake-key*              (kbd "a")
+ *mpd-modeline-fmt*             "%a - %A - %t"
+ *data-dir*                     "~/.stumpwm.d/"
+ *mouse-focus-policy*           :click
+ *message-window-gravity*       :center
+ *timeout-wait*                 3
+ *input-window-gravity*         :center
+ *startup-message*              nil
+ *maxsize-border-width*         1
+ *colors*                       (append *colors*
+                                        (list "grey10"
+                                              "Gray"))
+ *normal-border-width*          1
+ *window-border-style*          :thin
+ *mode-line-border-color*       "black"
+ *mode-line-background-color*   "black"
+ *mode-line-foreground-color*   "grey"
+ *mode-line-timeout*            1
+ *mode-line-highlight-format*   "^09~a^n"
+ *mode-line-position*           :bottom
+ *menu-maximum-height*          70
+ *frame-number-map*             "1234567890"
+ *window-format*                "^n%n^90-^n%m%20t^n")
+
+(update-color-map (current-screen))
+
+(setf *screen-mode-line-format*
+      (list
+       '(:eval (format nil "" (load-data)))
+       "^90[^n%g^90]^n"
+       '(:eval (format nil "~:[^90 [^n%w^90]^n~;~]" (equal "" (fmt-window-list (head-mode-line (car (screen-heads (car *screen-list*))))))))
+       '(:eval (format nil "~c" #\Newline))
+       "^90[^n%d^90] [^n"
+       '(:eval (getf *data* :uname))
+       "^90] [^nPlaying: %m^90]^n"
+       '(:eval (format nil "~c" #\Newline))
+       "^90[^nUptime: %U ^90|^n Cpu: %c - "
+       '(:eval (getf *data* :loadavg))
+       " ^90|^n CpuTemp: "
+       '(:eval (getf *data* :cputemp))
+       " ^90|^n GpuTemp: "
+       '(:eval (getf *data* :gputemp))
+       " ^90|^n Mem: %R ^90|^n %l^90]^n %N"))
+
+(if (not (head-mode-line (current-head)))
+    (toggle-mode-line (current-screen) (current-head)))
+
+
+(undefine-key *root-map* (kbd "C-k"))
+(undefine-key *root-map* (kbd "c"))
+
+(define-key *root-map* (kbd "e")                     "exec urxvtc -e emacsclient -c -nw")
+(define-key *root-map* (kbd "N")                     '*notification-map*)
+(define-key *root-map* (kbd "C-k")                   "close-protected-window")
+(define-key *root-map* (kbd "L")                     "loadrc")
+(define-key *root-map* (kbd "C-l")                   "reload")
+(define-key *root-map* (kbd "C-TAB")                 "fnext")
+(define-key *root-map* (kbd "ISO_Left_Tab")          "fprev")
+(define-key *root-map* (kbd "RET")                   "fullscreen")
+                                        ;(define-key *root-map* (kbd "M")                     "ratmove");move-windows
+(define-key *root-map* (kbd "c")                     "exec urxvtc")
+(define-key *root-map* (kbd "y")                     "mark")
+(define-key *root-map* (kbd "F")                     "gnew-float")
+
+(define-key *top-map*  (kbd "C-M-DEL")               "quit")
+                                        ;(define-key *top-map*  (kbd "C-Right")               "gnext")
+                                        ;(define-key *top-map*  (kbd "C-Left")                "gprev")
+(define-key *top-map*  (kbd "C-2")                   "firefox")
+(define-key *top-map*  (kbd "XF86Terminal")          '*mpd-map*)
+(define-key *top-map*  (kbd "XF86AudioPrev")         "mpd-prev")
+(define-key *top-map*  (kbd "XF86AudioPlay")         "mpd-toggle-pause")
+(define-key *top-map*  (kbd "XF86AudioStop")         "mpd-stop")
+(define-key *top-map*  (kbd "XF86AudioNext")         "mpd-next")
+(define-key *top-map*  (kbd "XF86AudioLowerVolume")  "mpd-volume-down")
+(define-key *top-map*  (kbd "XF86AudioMute")         "exec amixer sset Master toggle")
+(define-key *top-map*  (kbd "XF86AudioRaiseVolume")  "mpd-volume-up")
