@@ -18,7 +18,7 @@ zstyle ':completion:*' group-name ''
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-export PATH=.:/home/bronsa/.lein/bin:/home/bronsa/bin:.:/home/bronsa/httpd/bin:/opt/bin:/opt/sbin:/sbin:/usr/sbin:/usr/local/bin:/usr/games:/usr/games/bin:/home/bronsa/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=.:/home/bronsa/.lein/bin:/home/bronsa/bin:.:/home/bronsa/httpd/bin:/opt/bin:/opt/sbin:/sbin:/usr/sbin:/usr/local/bin:/usr/games:/usr/games/bin:/home/bronsa/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/bronsa/bin/erlang/bin
 
 HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:halt:reboot"
 HISTFILE=~/.histfile
@@ -40,9 +40,9 @@ alias EMACS=/usr/bin/emacs
 alias emacs='emacsclient -c -nw'
 alias xemacs='emacsclient -c -n -e "(set-mouse-color \"white\")"'
 export BREAK_CHARS="\"#'(),;\`\\|!?[]{}"
-alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -XX:+TieredCompilation -Xbootclasspath/a:$(echo -n /home/bronsa/src/clojure/target/clojure-*-master-SNAPSHOT.jar) clojure.main"
-alias cj='clj-head'
-alias clj="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -XX:+TieredCompilation -cp `for i in /home/bronsa/.dummy-clj-prj/lib/*.jar ; do echo -n $i: ; done` clojure.main"
+#alias java=drip
+alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -server -XX:+TieredCompilation -Xbootclasspath/a:/home/bronsa/src/clojure/target/clojure-1.5.0-master-SNAPSHOT.jar clojure.main"
+alias clj-prj="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -XX:+TieredCompilation -cp `for i in /home/bronsa/.dummy-clj-prj/lib/*.jar ; do echo -n $i: ; done` clojure.main"
 alias cljs="rlwrap -b \$BREAK_CHARS /home/bronsa/src/clojurescript/script/repljs"
 alias cljsc="$HOME/src/clojurescript/bin/cljsc"
 export ALTERNATE_EDITOR=""
@@ -94,3 +94,26 @@ all2mp3 () {
     rm audiodump.wav
 }
 alias clj=clj-head
+alias yip=/home/bronsa/bin/yjp/bin/yjp.sh
+alias light="java -jar /home/bronsa/bin/launcher.jar"
+
+
+function expand-dot-to-parent-directory-path {
+    if [[ "$LBUFFER" = *.. ]]; then
+        local -a args
+        args=("${(@z)LBUFFER}")
+        if [[ -e "${(Q)args[-1]}" ]]; then
+            args[-1]="${(q):-"${${${(Q)args[-1]}:a}%/}/"}"
+            LBUFFER="${(j| |)args}"
+        else
+            LBUFFER+='.'
+        fi
+    else
+        LBUFFER+='.'
+    fi
+}
+
+zle -N expand-dot-to-parent-directory-path
+bindkey -M viins . expand-dot-to-parent-directory-path
+bindkey -M emacs . expand-dot-to-parent-directory-path
+
