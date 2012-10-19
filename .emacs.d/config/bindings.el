@@ -25,36 +25,19 @@
                                                                   (set-process-filter process nil)))))
                                         (cd dir))
                                       (message "Starting swank server...")))
-(global-set-key (kbd "C-c s e e")   'slime-eval-last-expression)
-(global-set-key (kbd "C-c s e b")   'slime-eval-buffer)
-(global-set-key (kbd "C-c s e i")   'slime-eval-describe)
-(global-set-key (kbd "C-c s e a")   'slime-eval-async)
-(global-set-key (kbd "C-c s e d")   'slime-eval-defun)
-(global-set-key (kbd "C-c s e f")   'slime-eval-feature-expression)
-(global-set-key (kbd "C-c s e l")   'slime-eval-for-lisp)
-(global-set-key (kbd "C-c s e m")   'slime-eval-macroexpand-inplace)
-(global-set-key (kbd "C-c s e n")   'slime-eval-print-last-expression)
-(global-set-key (kbd "C-c s e r")   'slime-eval-region)
-(global-set-key (kbd "C-c s e t")   'slime-eval-with-transcript)
 
-;;funky characters
-(global-set-key (kbd "C-c i l") (lambda () (interactive) (insert "λ")))
-(global-set-key (kbd "C-c i n") (lambda () (interactive) (insert "ℕ")))
-(global-set-key (kbd "C-c i i") (lambda () (interactive) (insert "∞")))
-(global-set-key (kbd "C-c i .") (lambda () (interactive) (insert "×")))
-(global-set-key (kbd "C-c i 0") (lambda () (interactive) (insert "∅")))
-(global-set-key (kbd "C-c i u") (lambda () (interactive) (insert "∪")))
-(global-set-key (kbd "C-c i s") (lambda () (interactive) (insert "♯")))
+;; (global-set-key (kbd "C-c s e d")   'slime-eval-defun)
+;; (global-set-key (kbd "C-c s e m")   'slime-eval-macroexpand-inplace)
+;; (global-set-key (kbd "C-c s e n")   'slime-eval-print-last-expression)
+;; (global-set-key (kbd "C-c s e r")   'slime-eval-region)
 
-;;diff shortcuts
-(global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
 
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
-;(gobal-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-w") 'backward-kill-word)
 
 ;;delete current word
-;(global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
+(global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
 
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
@@ -77,13 +60,9 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; If you want to be able to M-x without meta
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 
-(global-set-key (kbd "M-v")  'yank)
 (global-set-key (kbd "C-M-_") 'undo-tree-undo)
 
 ;; Enable autoindentation on RET
@@ -97,10 +76,6 @@
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
-;; (setcdr (assoc "C-p" shell-bind-key-alist) 'multi-shell-prev)
-;; (setcdr (assoc "C-n" shell-bind-key-alist) 'multi-shell-prev)
-;; (multi-term-keystroke-setup)
 
 ;; C-M-x eval-defun
 ;; C-q ( insert unmatched parenthesis

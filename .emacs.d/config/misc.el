@@ -133,7 +133,6 @@
               (slime-repl-return)
               (other-window 1)))))
 
-
 (defadvice gist-region (around su/advice/gist/gist-region/around/dirty-hack
                                a c pre)
   "Dirty hack to prevent gist-region from choking on buffers which contain

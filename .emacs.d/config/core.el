@@ -85,8 +85,7 @@
                    'smex
                    'tabbar
                    'undo-tree
-                   'window-resize
-                   ))
+                   'window-resize))
   (require lib))
 
 (eval-after-load "isearch" '(require 'isearch+))
