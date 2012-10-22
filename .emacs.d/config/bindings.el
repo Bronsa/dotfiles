@@ -37,7 +37,7 @@
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
 ;;delete current word
-(global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
+(global-set-key (kbd "M-W") (lambda () (interactive) (backward-word) (kill-word 1)))
 
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
