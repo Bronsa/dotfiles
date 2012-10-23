@@ -34,7 +34,7 @@
 
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
-(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "M-D") 'backward-kill-word)
 
 ;;delete current word
 (global-set-key (kbd "M-W") (lambda () (interactive) (backward-word) (kill-word 1)))
