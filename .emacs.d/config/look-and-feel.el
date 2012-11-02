@@ -53,7 +53,7 @@
 ;; Set faces
 (custom-set-faces
  '(which-func ((t (:foreground "#729fcf"))))
- '(linum ((t (:foreground "gray40" :weight bold)))))
+ '(linum ((t (:foreground "gray35" :weight bold)))))
 
 (set-face-attribute
  'tabbar-default nil
@@ -61,10 +61,9 @@
 (set-face-attribute
  'tabbar-unselected nil
  :background "gray10"
- :foreground "gray"
- :box nil)
+ :foreground "gray60")
 (set-face-attribute
  'tabbar-selected nil
  :background "black"
- :foreground "gray"
- :box nil)
+ :foreground "gray75"
+ :weight 'bold)
