@@ -53,7 +53,8 @@
 ;; Set faces
 (custom-set-faces
  '(which-func ((t (:foreground "#729fcf"))))
- '(linum ((t (:foreground "gray35" :weight bold)))))
+ '(linum ((t (:foreground "gray35" :weight bold))))
+ '(eval-sexp-fu-flash ((t (:background "gray50" :weight bold)))))
 
 (set-face-attribute
  'tabbar-default nil
