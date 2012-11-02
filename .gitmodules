@@ -94,3 +94,6 @@
 [submodule ".emacs.d/lib/haskell-mode"]
 	path = .emacs.d/lib/haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
+[submodule ".emacs.d/lib/nrepl"]
+	path = .emacs.d/lib/nrepl
+	url = https://github.com/kingtim/nrepl.el.git

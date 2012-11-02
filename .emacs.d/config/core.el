@@ -35,6 +35,7 @@
                     "magit"
                     "markdown-mode"
                     "multi-eshell"
+		    "nrepl"
                     "pcache"
                     "paredit"
                     "php-mode"
@@ -74,6 +75,7 @@
                    'magit
                    'markdown-mode
                    'multi-eshell
+		   'nrepl
                    'paren
                    'paredit
                    'php-mode
