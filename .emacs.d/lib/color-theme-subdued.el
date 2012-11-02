@@ -50,9 +50,9 @@ Based on the Tango color palette."
      (font-lock-warning-face ((t (:bold t :foreground "#cc0000")))) ; scarlet red
 
      ;; Search
-     (isearch ((t (:foreground "#080808" :background "#edd400"))))
-     (isearch-lazy-highlight-face ((t (:foreground "#080808" :background "#1e2320"))))
-     (isearch-fail ((t (:background "red"))))
+     (isearch ((t (:foreground "#ddda02" :background "#454545" :weight extra-bold))))
+     (isearch-lazy-highlight-face ((t (:foreground "#b0aa02" :background "#232323"))))
+     (isearch-fail ((t (:background "#660500"))))
 
      ;; Emacs Interface
      (fringe ((t (:background "#0f0f0f"))))
@@ -61,7 +61,7 @@ Based on the Tango color palette."
      (mode-line-buffer-id ((t (:background "#1f1f1f" :foreground "#eeeeec"))))
      (mode-line-inactive ((t (:background "#1f1f1f" :foreground "#888a85"))))
      (minibuffer-prompt ((t (:foreground "#729fcf")))) ; light sky blue
-     (region ((t (:background "#505050"))))
+     (region ((t (:background "#343434"))))
 
      ;; Parenthesis matching
      ;(show-paren-match-face ((t (:foreground "#2e3436" :background "#73d216"))))
