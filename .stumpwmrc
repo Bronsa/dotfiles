@@ -3,41 +3,35 @@
 
 
 (when *initializing*
-  (mapcar #'load-module '("sbclfix"
-                          "mem"
-                          "uptime"
-                          "mouse"
-                          "mpd"
-                          "net"
-                          "notification"
-                          "cpu"
-                          "autotile"))
-
+  (mapcar #'load-module
+          '("sbclfix"
+            "mem"
+            "uptime"
+            "mouse"
+            "mpd"
+            "net"
+            "notification"
+            "cpu"
+            "autotile"))
+  
   (mpd-connect)
   (grename "Main")
   (gnewbg "Web")
-                                        ; (gnewbg "AutoTiled")
-                                        ; (gnewbg "Floating")
-  (banish)
-;  (require 'swank)
-; (swank:create-server 1337)
-    )
+  ;; (gnewbg "AutoTiled")
+  ;; (gnewbg "Floating")
+  (banish))
 
-
-(defmacro read-file (filename)
-  `(read-line (open ,filename)))
-
-(defun load-data ()
-  (with-open-file (in "/tmp/data")
-    (with-standard-io-syntax
-      (setf *data* (read in)))))
+;; (defun load-data ()
+;;   (with-open-file (in "/tmp/data")
+;;     (with-standard-io-syntax
+;;       (setf *data* (read in)))))
 
 (set-prefix-key (kbd "C-a"))
 (set-fg-color "Gray")
 (set-bg-color "Black")
 (set-border-color "Gray20")
 (set-msg-border-width 10)
-(set-focus-color   "gray40")
+(set-focus-color "gray40")
 (set-unfocus-color "black")
 (set-normal-gravity :center)
 (set-font "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*" )
@@ -49,7 +43,7 @@
 (clear-window-placement-rules)
 
 (define-frame-preference "Web"
-    (0 t   t :class "Firefox"))
+    (0 t t :class "Firefox"))
 
 (defcommand close-protected-window () ()
             (let ((*deny-quit-request* nil))
