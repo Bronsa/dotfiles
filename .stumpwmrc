@@ -13,7 +13,7 @@
             "notification"
             "cpu"
             "autotile"))
-  
+
   (mpd-connect)
   (grename "Main")
   (gnewbg "Web")
@@ -26,7 +26,7 @@
 ;;     (with-standard-io-syntax
 ;;       (setf *data* (read in)))))
 
-(set-prefix-key (kbd "C-a"))
+(set-prefix-key (kbd "C-i"))
 (set-fg-color "Gray")
 (set-bg-color "Black")
 (set-border-color "Gray20")
@@ -147,6 +147,7 @@
 (define-key *root-map* (kbd "y")                     "mark")
 (define-key *root-map* (kbd "F")                     "gnew-float")
 
+(define-key *top-map*  (kbd "M-TAB")                 "fnext")
 (define-key *top-map*  (kbd "C-M-DEL")               "quit")
                                         ;(define-key *top-map*  (kbd "C-Right")               "gnext")
                                         ;(define-key *top-map*  (kbd "C-Left")                "gprev")
