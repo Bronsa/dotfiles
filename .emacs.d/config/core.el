@@ -35,7 +35,7 @@
                     "magit"
                     "markdown-mode"
                     "multi-eshell"
-		    "nrepl"
+                    "nrepl"
                     "pcache"
                     "paredit"
                     "php-mode"
@@ -75,7 +75,7 @@
                    'magit
                    'markdown-mode
                    'multi-eshell
-		   'nrepl
+                   'nrepl
                    'paren
                    'paredit
                    'php-mode
@@ -87,7 +87,8 @@
                    'smex
                    'tabbar
                    'undo-tree
-                   'window-resize))
+                   'window-resize
+))
   (require lib))
 
 (eval-after-load "isearch" '(require 'isearch+))

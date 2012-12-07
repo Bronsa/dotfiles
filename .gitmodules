@@ -6,7 +6,7 @@
 	url = https://github.com/gstamp/align-cljlet.git
 [submodule ".emacs.d/lib/auto-complete"]
 	path = .emacs.d/lib/auto-complete
-	url = https://github.com/m2ym/auto-complete.git
+	url = https://github.com/auto-complete/auto-complete.git
 [submodule ".emacs.d/lib/clojure-mode"]
 	path = .emacs.d/lib/clojure-mode
 	url = https://github.com/technomancy/clojure-mode.git
