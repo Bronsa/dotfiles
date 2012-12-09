@@ -2,4 +2,4 @@
 	name = Bronsa
 	email = brobronsa@gmail.com
 [core]
-    editor = emacs
+	editor = emacsclient -c -nw
