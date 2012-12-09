@@ -3,3 +3,5 @@
 	email = brobronsa@gmail.com
 [core]
 	editor = emacsclient -c -nw
+[push]
+	default = matching
