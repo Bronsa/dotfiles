@@ -1,32 +1,9 @@
 (in-package :stumpwm)
 (setf *default-package* :stumpwm)
 
+(mapcar #'load-module '("sbclfix" "stumptray"))
 
-(when *initializing*
-  (mapcar #'load-module
-          '("sbclfix"
-            "mem"
-            "uptime"
-            "mouse"
-            "mpd"
-            "net"
-            "notification"
-            "cpu"
-            "autotile"))
-
-  (mpd-connect)
-  (grename "Main")
-  (gnewbg "Web")
-  ;; (gnewbg "AutoTiled")
-  ;; (gnewbg "Floating")
-  (banish))
-
-;; (defun load-data ()
-;;   (with-open-file (in "/tmp/data")
-;;     (with-standard-io-syntax
-;;       (setf *data* (read in)))))
-
-(set-prefix-key (kbd "C-i"))
+(set-prefix-key (kbd "C-f"))
 (set-fg-color "Gray")
 (set-bg-color "Black")
 (set-border-color "Gray20")
@@ -40,10 +17,17 @@
             "run firefox"
             (run-or-raise "firefox" '(:class "Firefox")))
 
+(defcommand irssi () ()
+            "run irssi"
+            (run-or-raise "urxvtc -title irssi -e irssi" '(:title "irssi")))
+
 (clear-window-placement-rules)
 
-(define-frame-preference "Web"
+(define-frame-preference "Default1"
     (0 t t :class "Firefox"))
+
+(define-frame-preference "Default0"
+    (1 t t :title "irssi"))
 
 (defcommand close-protected-window () ()
             (let ((*deny-quit-request* nil))
@@ -55,6 +39,15 @@
             "Cycle through the frame tree to the next frame."
             (focus-prev-frame (current-group)))
 
+(defcommand vol-down () ()
+            (run-shell-command "amixer set Speaker playback 0.75dB-"))
+
+(defcommand vol-up () ()
+            (run-shell-command "amixer set Speaker playback 0.75dB+"))
+
+(defcommand vol-toggle () ()
+            (run-shell-command "amixer set Speaker toggle"))
+
 (setf
  *mode-line-click-hook*
  (list (lambda (&rest args)
@@ -62,40 +55,35 @@
            ((eq (second args) 1)
             (run-commands "pull-hidden-next"))
            ((eq (second args) 2)
-            (run-shell-command "urxvtc"))
+            (run-commands "vol-toggle"))
            ((eq (second args) 3)
             (run-commands "pull-hidden-previous"))
-           ((eq (second args) 4)
-            (run-commands "fnext"))
+            ((eq (second args) 4)
+            (run-commands "vol-up"))
            ((eq (second args) 5)
-            (run-commands "fprev"))
-           ((eq (second args) 8)
-            (run-commands "gprev"))
-           ((eq (second args) 9)
-            (run-commands "gnext")))))
+            (run-commands "vol-down")))))
 
-                                        ;*debug-level*                 5
-                                        ;*show-command-backtrace*      t
+ ;;*debug-level*                 5
+ ;;*show-command-backtrace*      t
  *input-completion-type*        :fuzzy
  *mode-line-pad-y*              0
  *mode-line-pad-y*              0
- *autotiling-groups*            (list "AutoTiled")
+ ;; *autotiling-groups*            (list "AutoTiled")
  *suppress-abort-messages*      t
+ *suppress-frame-indicator*     t
  *float-window-border*          2
  *float-window-title-height*    8
- *escape-fake-key*              (kbd "a")
- *mpd-modeline-fmt*             "%a - %A - %t"
- *data-dir*                     "~/.stumpwm.d/"
+ ;*escape-fake-key*              (kbd "C-f")
  *mouse-focus-policy*           :click
  *message-window-gravity*       :center
- *timeout-wait*                 3
+ *timeout-wait*                 2
  *input-window-gravity*         :center
  *startup-message*              nil
- *maxsize-border-width*         1
+ *maxsize-border-width*         2
  *colors*                       (append *colors*
                                         (list "grey10"
                                               "Gray"))
- *normal-border-width*          1
+ *normal-border-width*          2
  *window-border-style*          :thin
  *mode-line-border-color*       "black"
  *mode-line-background-color*   "black"
@@ -103,60 +91,75 @@
  *mode-line-timeout*            1
  *mode-line-highlight-format*   "^09~a^n"
  *mode-line-position*           :bottom
+ ;; *tray-viwin-background*        "black"
+ ;; *tray-hiwin-background*        "black"
+ ;; *tray-win-background*          "black"
  *menu-maximum-height*          70
  *frame-number-map*             "1234567890"
- *window-format*                "^n%n^90-^n%m%20t^n")
+ *window-format*                "%n%s%m%20t")
 
-(update-color-map (current-screen))
-
+(mapcar (lambda (s)
+          (update-color-map s))
+        *screen-list*)
 (setf *screen-mode-line-format*
       (list
-       '(:eval (format nil "" (load-data)))
-       "^90[^n%g^90]^n"
-       '(:eval (format nil "~:[^90 [^n%w^90]^n~;~]" (equal "" (fmt-window-list (head-mode-line (car (screen-heads (car *screen-list*))))))))
+       "^90[^n%d^90]^n"
        '(:eval (format nil "~c" #\Newline))
-       "^90[^n%d^90] [^n"
-       '(:eval (getf *data* :uname))
-       "^90] [^nPlaying: %m^90]^n"
-       '(:eval (format nil "~c" #\Newline))
-       "^90[^nUptime: %U ^90|^n Cpu: %c - "
-       '(:eval (getf *data* :loadavg))
-       " ^90|^n CpuTemp: "
-       '(:eval (getf *data* :cputemp))
-       " ^90|^n GpuTemp: "
-       '(:eval (getf *data* :gputemp))
-       " ^90|^n Mem: %R ^90|^n %l^90]^n %N"))
+       "^90[^n%g^90]^n "
+       '(:eval (format nil "~:[^90 [^n%W^90]^n~;~]"
+                (equal "" (fmt-window-list (head-mode-line (current-head))))))))
 
 (if (not (head-mode-line (current-head)))
-    (toggle-mode-line (current-screen) (current-head)))
-
+    (mapcar (lambda (s)
+              (mapcar (lambda (h)
+                        (toggle-mode-line s h))
+                      (screen-heads s)))
+            *screen-list*))
 
 (undefine-key *root-map* (kbd "C-k"))
 (undefine-key *root-map* (kbd "c"))
+;; (undefine-key *root-map* (kbd "C-f"))
+;; (undefine-key *root-map* (kbd "C-p"))
+;; (undefine-key *root-map* (kbd "C-n"))
 
-(define-key *root-map* (kbd "e")                     "exec urxvtc -e emacsclient -c -nw")
-(define-key *root-map* (kbd "N")                     '*notification-map*)
-(define-key *root-map* (kbd "C-k")                   "close-protected-window")
-(define-key *root-map* (kbd "L")                     "loadrc")
-(define-key *root-map* (kbd "C-l")                   "reload")
-(define-key *root-map* (kbd "C-TAB")                 "fnext")
-(define-key *root-map* (kbd "ISO_Left_Tab")          "fprev")
-(define-key *root-map* (kbd "RET")                   "fullscreen")
-                                        ;(define-key *root-map* (kbd "M")                     "ratmove");move-windows
-(define-key *root-map* (kbd "c")                     "exec urxvtc")
-(define-key *root-map* (kbd "y")                     "mark")
-(define-key *root-map* (kbd "F")                     "gnew-float")
+(define-key *root-map* (kbd "C-f")                 "meta C-f")
+;; (define-key *root-map* (kbd "e")                   "run-shell-command urxvtc -title emacs -e emacsclient -c -nw")
+;; (define-key *root-map* (kbd "N")                     '*notification-map*)
+(define-key *root-map* (kbd "C-k")                 "close-protected-window")
+(define-key *root-map* (kbd "L")                   "loadrc")
+(define-key *root-map* (kbd "C-l")                 "reload")
+;; (define-key *root-map* (kbd "C-o")                   "snext")
+;; (define-key *root-map* (kbd "C-n")                   "snext")
+;; (define-key *root-map* (kbd "C-p")                   "sprev")
+(define-key *root-map* (kbd "TAB")                 "fnext")
+(define-key *root-map* (kbd "ISO_Left_Tab")        "fprev")
+(define-key *root-map* (kbd "RET")                 "fullscreen")
+(define-key *root-map* (kbd "c")                   "exec urxvtc")
+(define-key *root-map* (kbd "y")                   "mark")
+(define-key *root-map* (kbd "F")                   "gnew-float")
+(define-key *top-map*  (kbd "M-TAB")               "snext")
+(define-key *top-map*  (kbd "C-M-DEL")             "quit")
+(define-key *top-map*  (kbd "C-2")                 "firefox")
+(define-key *top-map*  (kbd "XF86AudioPrev")       "exec cmus-remote --prev")
+(define-key *top-map*  (kbd "XF86AudioPlay")       "exec cmus-remote --pause")
+(define-key *top-map*  (kbd "XF86AudioStop")       "exec cmus-remote --stop")
+(define-key *top-map*  (kbd "XF86AudioNext")       "exec cmus-remote --next")
+(define-key *top-map*  (kbd "XF86AudioLowerVolume")"vol-down")
+(define-key *top-map*  (kbd "XF86AudioMute")       "vol-toggle")
+(define-key *top-map*  (kbd "XF86AudioRaiseVolume")"vol-up")
 
-(define-key *top-map*  (kbd "M-TAB")                 "fnext")
-(define-key *top-map*  (kbd "C-M-DEL")               "quit")
-                                        ;(define-key *top-map*  (kbd "C-Right")               "gnext")
-                                        ;(define-key *top-map*  (kbd "C-Left")                "gprev")
-(define-key *top-map*  (kbd "C-2")                   "firefox")
-(define-key *top-map*  (kbd "XF86Terminal")          '*mpd-map*)
-(define-key *top-map*  (kbd "XF86AudioPrev")         "mpd-prev")
-(define-key *top-map*  (kbd "XF86AudioPlay")         "mpd-toggle-pause")
-(define-key *top-map*  (kbd "XF86AudioStop")         "mpd-stop")
-(define-key *top-map*  (kbd "XF86AudioNext")         "mpd-next")
-(define-key *top-map*  (kbd "XF86AudioLowerVolume")  "mpd-volume-down")
-(define-key *top-map*  (kbd "XF86AudioMute")         "exec amixer sset Master toggle")
-(define-key *top-map*  (kbd "XF86AudioRaiseVolume")  "mpd-volume-up")
+(when *initializing*
+  (banish)
+  (run-commands
+   "grename Default0"
+   "exec display -window root /media/old/Pictures/bg6.png"
+   "vsplit"
+   "exec urxvtc -e cmus"
+   "irssi"
+   "stumptray"
+   "snext"
+   "grename Default1"
+   "stumptray"
+   "exec display -window root /media/old/Pictures/bg6.png"
+   "exec urxvtc -title emacs -e emacsclient -c -nw"
+   "firefox"))
