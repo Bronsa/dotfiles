@@ -1,6 +1,3 @@
-[submodule ".emacs.d/lib/ac-slime"]
-	path = .emacs.d/lib/ac-slime
-	url = https://github.com/purcell/ac-slime.git
 [submodule ".emacs.d/lib/align-cljlet"]
 	path = .emacs.d/lib/align-cljlet
 	url = https://github.com/gstamp/align-cljlet.git
@@ -13,21 +10,12 @@
 [submodule ".emacs.d/lib/elein"]
 	path = .emacs.d/lib/elein
 	url = https://github.com/remvee/elein.git
-[submodule ".emacs.d/lib/inf-ruby"]
-	path = .emacs.d/lib/inf-ruby
-	url = https://github.com/nonsequitur/inf-ruby.git
 [submodule ".emacs.d/lib/magit"]
 	path = .emacs.d/lib/magit
 	url = https://github.com/magit/magit.git
-[submodule ".emacs.d/lib/rsense"]
-	path = .emacs.d/lib/rsense
-	url = https://github.com/m2ym/rsense.git
 [submodule ".emacs.d/lib/ruby-electric"]
 	path = .emacs.d/lib/ruby-electric
 	url = https://github.com/qoobaa/ruby-electric.git
-[submodule ".emacs.d/lib/slime"]
-	path = .emacs.d/lib/slime
-	url = https://github.com/technomancy/slime.git
 [submodule ".emacs.d/lib/smex"]
 	path = .emacs.d/lib/smex
 	url = https://github.com/nonsequitur/smex.git
@@ -46,54 +34,27 @@
 [submodule ".emacs.d/lib/markdown-mode"]
 	path = .emacs.d/lib/markdown-mode
 	url = https://github.com/emacsmirror/markdown-mode.git
-[submodule ".emacs.d/lib/multi-eshell"]
-	path = .emacs.d/lib/multi-eshell
-	url = https://github.com/emacsmirror/multi-eshell.git
 [submodule ".emacs.d/lib/linum-plus"]
 	path = .emacs.d/lib/linum-plus
 	url = https://github.com/emacsmirror/linum-plus.git
 [submodule ".emacs.d/lib/paredit"]
 	path = .emacs.d/lib/paredit
 	url = https://github.com/emacsmirror/paredit.git
-[submodule ".emacs.d/lib/php-mode"]
-	path = .emacs.d/lib/php-mode
-	url = https://github.com/ejmr/php-mode.git
-[submodule ".emacs.d/lib/slamhound"]
-	path = .emacs.d/lib/slamhound
-	url = https://github.com/technomancy/slamhound.git
-[submodule ".emacs.d/lib/gist"]
-	path = .emacs.d/lib/gist
-	url = https://github.com/defunkt/gist.el.git
 [submodule ".emacs.d/lib/isearch+"]
 	path = .emacs.d/lib/isearch+
 	url = https://github.com/emacsmirror/isearch-plus.git
-[submodule ".emacs.d/lib/tree-mode"]
-	path = .emacs.d/lib/tree-mode
-	url = https://github.com/emacsmirror/tree-mode.git
-[submodule ".emacs.d/lib/windata"]
-	path = .emacs.d/lib/windata
-	url = https://github.com/emacsmirror/windata.git
-[submodule ".emacs.d/lib/dirtree"]
-	path = .emacs.d/lib/dirtree
-	url = https://github.com/zkim/emacs-dirtree.git
 [submodule ".emacs.d/lib/imenu+"]
 	path = .emacs.d/lib/imenu+
 	url = https://github.com/emacsmirror/imenu-plus.git
-[submodule ".emacs.d/lib/gh"]
-	path = .emacs.d/lib/gh
-	url = https://github.com/sigma/gh.el.git
-[submodule ".emacs.d/lib/pcache"]
-	path = .emacs.d/lib/pcache
-	url = https://github.com/sigma/pcache.git
-[submodule ".emacs.d/lib/logito"]
-	path = .emacs.d/lib/logito
-	url = https://github.com/sigma/logito.git
-[submodule ".emacs.d/lib/tabulated-list"]
-	path = .emacs.d/lib/tabulated-list
-	url = https://github.com/sigma/tabulated-list.el.git
 [submodule ".emacs.d/lib/haskell-mode"]
 	path = .emacs.d/lib/haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
 [submodule ".emacs.d/lib/nrepl"]
 	path = .emacs.d/lib/nrepl
 	url = https://github.com/kingtim/nrepl.el.git
+[submodule ".emacs.d/lib/ac-nrepl"]
+	path = .emacs.d/lib/ac-nrepl
+	url = https://github.com/purcell/ac-nrepl.git
+[submodule ".emacs.d/lib/auto-highlight-symbol-mode"]
+    path = .emacs.d/lib/auto-highlight-symbol-mode
+    url = https://github.com/mitsuo-saito/auto-highlight-symbol-mode.git

@@ -38,14 +38,8 @@
      eval-sexp-fu-flash-duration 0.5
      truncate-lines t
 
-     ;;display-buffer-function 'popwin:display-buffer
-
      show-paren-delay 0
      show-paren-style (quote expression))
-
-;; Make emacs transparent
-(set-frame-parameter (selected-frame) 'alpha '(96 96))
-(add-to-list 'default-frame-alist '(alpha 96 96))
 
 ;; Line-wrapping
 (set-default 'fill-column 180)

@@ -3,13 +3,10 @@
         (list (cond
                ((memq major-mode '(shell-mode term-mode eshell-mode))
                 "Shell")
-               ((or (equal (current-buffer) "*slime-source*")
-                    (equal "*inferior-lisp*" (buffer-name b))
-                    (memq  major-mode '(slime-mode slime-repl-mode compilation-mode sldb-mode slime-inspector-mode)))
-                "Slime")
-               ((memq major-mode
-                      '(erc-mode))
-                "ERC")
+               ((or (equal "*inferior-lisp*" (buffer-name b))
+                    (equal "*nrepl*" (buffer-name b))
+                    (equal "*nrepl-error*" (buffer-name b)))
+                "Lisp Interaction")
                (t
                 "All")))))
 
@@ -22,13 +19,11 @@
                            ;;((eq (current-buffer) b) b)
                            ((char-equal ?\  (aref (buffer-name b) 0)) nil)
                            ((or (equal "*Messages*" (buffer-name b))
-                                (equal "*swank*" (buffer-name b))
                                 (equal "*Help*" (buffer-name b))
-                                (equal ".newsrc-dribble" (buffer-name b))
                                 (equal "*Buffer List*" (buffer-name b))
-                                (equal "*slime-events*" (buffer-name b))
+                                (equal "*nrepl-server*" (buffer-name b))
                                 (equal "*Shell Command Output*" (buffer-name b))
-                                (equal "*elein-swank*" (buffer-name b))
+                                (equal "*nrepl-connection*" (buffer-name b))
                                 (equal "*Ido Completions*" (buffer-name b))
                                 (equal "*Completions*" (buffer-name b))
                                 (equal "*Compile-Log*" (buffer-name b))

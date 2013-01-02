@@ -12,48 +12,35 @@
   (load-file (concat config-dir f)))
 
 ;; Add lib paths
-(dolist (path (list "ac-slime"
+(dolist (path (list "ac-nrepl"
                     "align-cljlet"
                     "auto-complete"
+                    "auto-highlight-symbol-mode"
                     "backup-dir"
                     "clojure-mode"
                     "color-theme"
-                    "dirtree"
-                    "durendal"
                     "elein"
-                    "emacs-nav"
                     "eval-sexp-fu"
-                    "gh"
-                    "gist"
                     "haskell-mode"
                     "highlight"
                     "imenu+"
-                    "inf-ruby"
                     "isearch+"
-                    "logito"
                     "linum-plus"
                     "magit"
                     "markdown-mode"
-                    "multi-eshell"
                     "nrepl"
-                    "pcache"
                     "paredit"
-                    "php-mode"
-                    "rsense/etc"
                     "ruby-electric"
-                    "slime"
                     "smex"
-                    "tabulated-list"
-                    "tree-mode"
-                    "undo-tree"
-                    "windata"))
+                    "undo-tree"))
   (add-lib-path path))
 
 ;; Require libs
-(dolist (lib (list 'ac-slime
+(dolist (lib (list 'ac-nrepl
                    'align-cljlet
                    'auto-complete
                    'auto-complete-config
+                   'auto-highlight-symbol
                    'backup-dir
                    'clojure-mode
                    'color-theme
@@ -61,37 +48,24 @@
                    'clojure-test-mode
                    'd-mode
                    'dircolors
-                   'dirtree
-                   'elein
-                   'nav
                    'eval-sexp-fu
-                   'gist
                    'haskell-mode
                    'highlight
                    'imenu+
-                   'inf-ruby
                    'isearch+
                    'linum+
                    'magit
                    'markdown-mode
-                   'multi-eshell
                    'nrepl
                    'paren
                    'paredit
-                   'php-mode
                    'ps-print
-                   'rsense
                    'ruby-electric
                    'saveplace
-                   'slime
                    'smex
                    'tabbar
-                   'undo-tree
-                   'window-resize
-))
+                   'undo-tree))
   (require lib))
-
-(eval-after-load "isearch" '(require 'isearch+))
 
 ;; Load config files
 (dolist (config-file (list "auto-complete-conf.el"
