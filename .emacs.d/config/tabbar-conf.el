@@ -3,9 +3,12 @@
         (list (cond
                ((memq major-mode '(shell-mode term-mode eshell-mode))
                 "Shell")
-               ((or (equal "*inferior-lisp*" (buffer-name b))
-                    (equal "*nrepl*" (buffer-name b))
-                    (equal "*nrepl-error*" (buffer-name b)))
+               ((or
+                 (memq  major-mode '(slime-mode slime-repl-mode compilation-mode sldb-mode slime-inspector-mode))
+                 (equal "*slime-source*" (buffer-name (current-buffer)))
+                 (equal "*inferior-lisp*" (buffer-name (current-buffer)))
+                 (equal "*nrepl*" (buffer-name (current-buffer)))
+                 (equal "*nrepl-error*" (buffer-name (current-buffer))))
                 "Lisp Interaction")
                (t
                 "All")))))
@@ -22,6 +25,8 @@
                                 (equal "*Help*" (buffer-name b))
                                 (equal "*Buffer List*" (buffer-name b))
                                 (equal "*nrepl-server*" (buffer-name b))
+                                (equal "*slime-events*" (buffer-name b))
+                                (equal "*swank*" (buffer-name b))
                                 (equal "*Shell Command Output*" (buffer-name b))
                                 (equal "*nrepl-connection*" (buffer-name b))
                                 (equal "*Ido Completions*" (buffer-name b))

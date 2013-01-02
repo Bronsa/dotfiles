@@ -32,10 +32,16 @@
 
  diff-switches "-u"
 
+ slime-protocol-version 'ignore
+ slime-net-coding-system 'utf-8-unix
+
  inferior-lisp-program  "lein repl")
 
 (make-variable-buffer-local 'backup-inhibited)
 (smex-initialize)
+
+(slime-setup
+ '(slime-scratch slime-fancy slime-fuzzy slime-repl))
 
 (defun indent-file ()
   "indent whole buffer and untabify it"

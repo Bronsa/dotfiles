@@ -58,3 +58,12 @@
 [submodule ".emacs.d/lib/auto-highlight-symbol-mode"]
     path = .emacs.d/lib/auto-highlight-symbol-mode
     url = https://github.com/mitsuo-saito/auto-highlight-symbol-mode.git
+[submodule ".emacs.d/lib/ac-slime"]
+	path = .emacs.d/lib/ac-slime
+	url = https://github.com/purcell/ac-slime.git
+[submodule ".emacs.d/lib/slime"]
+	path = .emacs.d/lib/slime
+	url = https://github.com/technomancy/slime.git
+[submodule ".zoppo"]
+	path = .zoppo
+	url = https://github.com/zoppo/zoppo.git

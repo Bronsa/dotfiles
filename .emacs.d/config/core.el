@@ -13,6 +13,7 @@
 
 ;; Add lib paths
 (dolist (path (list "ac-nrepl"
+                    "ac-slime"
                     "align-cljlet"
                     "auto-complete"
                     "auto-highlight-symbol-mode"
@@ -31,12 +32,14 @@
                     "nrepl"
                     "paredit"
                     "ruby-electric"
+                    "slime"
                     "smex"
                     "undo-tree"))
   (add-lib-path path))
 
 ;; Require libs
 (dolist (lib (list 'ac-nrepl
+                   'ac-slime
                    'align-cljlet
                    'auto-complete
                    'auto-complete-config
@@ -62,6 +65,7 @@
                    'ps-print
                    'ruby-electric
                    'saveplace
+                   'slime
                    'smex
                    'tabbar
                    'undo-tree))
