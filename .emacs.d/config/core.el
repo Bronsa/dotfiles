@@ -12,7 +12,8 @@
   (load-file (concat config-dir f)))
 
 ;; Add lib paths
-(dolist (path (list "ac-nrepl"
+(dolist (path (list "ace"
+                    "ac-nrepl"
                     "ac-slime"
                     "align-cljlet"
                     "auto-complete"
@@ -38,7 +39,8 @@
   (add-lib-path path))
 
 ;; Require libs
-(dolist (lib (list 'ac-nrepl
+(dolist (lib (list 'ace-jump-mode
+                   'ac-nrepl
                    'ac-slime
                    'align-cljlet
                    'auto-complete

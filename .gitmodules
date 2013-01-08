@@ -67,3 +67,6 @@
 [submodule ".zoppo"]
 	path = .zoppo
 	url = https://github.com/zoppo/zoppo.git
+[submodule ".emacs.d/lib/ace"]
+	path = .emacs.d/lib/ace
+	url = https://github.com/winterTTr/ace-jump-mode.git

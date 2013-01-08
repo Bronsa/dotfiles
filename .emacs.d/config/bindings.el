@@ -77,5 +77,9 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-c C-c SPC") 'ace-jump-char-mode)
+(global-set-key (kbd "C-c C-c C-c SPC") 'ace-jump-line-mode)
+
 ;; C-M-x eval-defun
 ;; C-q ( insert unmatched parenthesis
