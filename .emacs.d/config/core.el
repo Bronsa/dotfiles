@@ -40,6 +40,7 @@
 
 ;; Require libs
 (dolist (lib (list 'ace-jump-mode
+                   'ac-math
                    'ac-nrepl
                    'ac-slime
                    'align-cljlet

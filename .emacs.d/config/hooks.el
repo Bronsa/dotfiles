@@ -24,8 +24,14 @@
                     'clojure-mode-font-lock-setup))
   (add-hook 'slime-repl-mode-hook hook))
 
-(dolist (mode '(text-mode html-mode sh-mode clojure-mode lisp-mode ruby-mode markdown-mode nrepl-mode))
+(dolist (mode '(text-mode html-mode sh-mode clojure-mode lisp-mode ruby-mode markdown-mode nrepl-mode latex-mode))
   (add-to-list 'ac-modes mode))
+
+(defun ac-latex-mode-setup ()
+  (setq ac-sources
+        (append '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands)
+                ac-sources)))
+(add-hook 'latex-mode-hook 'ac-latex-mode-setup)
 
 (add-hook 'after-save-hook 'ztl-modification-state-change)
 (add-hook 'first-change-hook 'ztl-on-buffer-modification)
