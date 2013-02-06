@@ -6,7 +6,7 @@
  require-final-newline t
  next-line-add-newlines nil
 
- vc-follow-symlinks
+ vc-follow-symlinks t
 
  case-fold-search t
 
@@ -34,6 +34,7 @@
  auto-save-list-file-prefix (concat dotfiles-tmp-dir "autosaves")
  auto-save-file-name-transforms `((".*" ,(concat dotfiles-tmp-dir "autosaves/\\1") t))
 
+ delete-auto-save-files t
  backup-by-copying t      ; don't clobber symlinks
  delete-old-versions t
  kept-new-versions 6

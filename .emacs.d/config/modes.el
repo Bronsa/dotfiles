@@ -18,3 +18,4 @@
 (auto-insert-mode t)
 (show-paren-mode t)
 (global-auto-highlight-symbol-mode t)
+(display-time-mode 1)
