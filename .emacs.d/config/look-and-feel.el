@@ -62,3 +62,12 @@
  :background "black"
  :foreground "gray75"
  :weight 'bold)
+
+(set-face-attribute
+ 'ac-clang-candidate-face nil
+ :background "gray60"
+ :foreground "black")
+(set-face-attribute
+ 'ac-clang-selection-face nil
+ :background "gray20"
+ :foreground "black")
