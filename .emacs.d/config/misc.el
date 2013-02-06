@@ -43,28 +43,6 @@
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 
-(setq sprunge-suffixes (make-hash-table :test 'equal))
-(puthash "Clojure" "cl" sprunge-suffixes)
-(puthash "Shell-script" "sh" sprunge-suffixes)
-
-;; (push 'java-mode which-func-modes)
-
-(defun sprunge ()
-  "Posts the current buffer to sprunge, and shows the resulting URL in a new buffer"
-  (interactive)
-  (if (buffer-file-name) (save-buffer) (write-file "/tmp/sprunge-post"))
-  (delete-other-windows)
-  (let ((sprunge-buffer (get-buffer-create "*sprunge*"))
-        (sprunge-window (split-window-vertically (- (window-height) 5)))
-        (filename buffer-file-name)
-        (suffix (if (gethash mode-name sprunge-suffixes) (concat "?" (gethash mode-name sprunge-suffixes)) "")))
-    (select-window sprunge-window)
-    (set-window-buffer sprunge-window sprunge-buffer)
-    (erase-buffer)
-    (insert (shell-command-to-string (concat "curl -F 'sprunge=<" filename "' http://sprunge.us")))
-    (delete-char -1) ; Newline after URL
-    (insert suffix "\n")))
-
 (defalias 'emacs 'find-file)
 (defalias 'open 'find-file)
 (defalias 'openo 'find-file-other-window)

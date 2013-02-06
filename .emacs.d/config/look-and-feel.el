@@ -32,9 +32,6 @@
      scroll-conservatively 10000
      scroll-preserve-screen-position 1
 
-     hl-paren-colors
-     '("red1" "orange1" "yellow1" "green1" "cyan1" "slateblue1" "magenta1" "purple")
-
      eval-sexp-fu-flash-duration 0.5
      truncate-lines t
 

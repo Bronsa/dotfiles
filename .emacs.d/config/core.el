@@ -21,7 +21,6 @@
                     "auto-highlight-symbol-mode"
                     "clojure-mode"
                     "color-theme"
-                    "elein"
                     "eval-sexp-fu"
                     "haskell-mode"
                     "highlight"
