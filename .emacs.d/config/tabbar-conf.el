@@ -26,6 +26,7 @@
                                 (equal "*Buffer List*" (buffer-name b))
                                 (equal "*nrepl-server*" (buffer-name b))
                                 (equal "*slime-events*" (buffer-name b))
+                                (equal "*clang-complete*" (buffer-name b))
                                 (equal "*swank*" (buffer-name b))
                                 (equal "*Shell Command Output*" (buffer-name b))
                                 (equal "*nrepl-connection*" (buffer-name b))
