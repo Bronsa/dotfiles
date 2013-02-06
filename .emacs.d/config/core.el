@@ -19,7 +19,6 @@
                     "auto-complete"
                     "auto-complete-clang-async"
                     "auto-highlight-symbol-mode"
-                    "backup-dir"
                     "clojure-mode"
                     "color-theme"
                     "elein"
@@ -49,7 +48,6 @@
                    'auto-complete-clang-async
                    'auto-complete-config
                    'auto-highlight-symbol
-                   'backup-dir
                    'clojure-mode
                    'color-theme
                    'color-theme-subdued
