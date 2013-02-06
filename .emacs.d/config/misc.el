@@ -13,22 +13,16 @@
  tab-width 4
  indent-line-function 'insert-tab
 
- ;; Configure auto-save
- auto-save-file-name-transforms `((".*" ,(concat dotfiles-tmp-dir "autosaves/\\1") t))
- backup-directory-alist `((".*" . ,(concat dotfiles-tmp-dir "backups")))
- backup-directory-info `((t ,(concat dotfiles-tmp-dir "backups") ok-create full-path prepend-name))
-
- auto-save-list-file-name (concat dotfiles-tmp-dir "autosaves/autosave-list")
- make-backup-files nil
- auto-save-default nil
-
  save-place t
  save-place-file (concat dotfiles-tmp-dir "places")
 
+ backup-by-copying t      ; don't clobber symlinks
  delete-old-versions t
- kept-old-versions 1
- kept-new-versions 3
+ kept-new-versions 6
+ kept-old-versions 2
  version-control t
+ backup-directory-alist `((".*" . ,(concat dotfiles-tmp-dir "backups")))
+ auto-save-file-name-transforms `((".*" ,(concat dotfiles-tmp-dir "autosaves/") t))
 
  diff-switches "-u"
 
@@ -37,7 +31,6 @@
 
  inferior-lisp-program  "lein repl")
 
-(make-variable-buffer-local 'backup-inhibited)
 (smex-initialize)
 
 (slime-setup
