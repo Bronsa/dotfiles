@@ -17,6 +17,7 @@
                     "ac-slime"
                     "align-cljlet"
                     "auto-complete"
+                    "auto-complete-clang-async"
                     "auto-highlight-symbol-mode"
                     "backup-dir"
                     "clojure-mode"
@@ -45,6 +46,7 @@
                    'ac-slime
                    'align-cljlet
                    'auto-complete
+                   'auto-complete-clang-async
                    'auto-complete-config
                    'auto-highlight-symbol
                    'backup-dir
