@@ -6,30 +6,48 @@
  require-final-newline t
  next-line-add-newlines nil
 
+ vc-follow-symlinks
+
  case-fold-search t
 
  ;; Set indentation rules
  indent-tabs-mode nil
  tab-width 4
  indent-line-function 'insert-tab
+ fill-column 82
+
+ default-major-mode 'text-mode
+
+ next-line-add-newlines nil
+ require-final-newline t
+
+ display-time-24hr-format t
+ display-time-day-and-date t
+
+ european-calendar-style t
+ calendar-week-start-day 1
 
  save-place t
  save-place-file (concat dotfiles-tmp-dir "places")
+
+ backup-directory-alist (list (cons ".*" (concat dotfiles-tmp-dir "backups")))
+ auto-save-list-file-prefix (concat dotfiles-tmp-dir "autosaves")
+ auto-save-file-name-transforms `((".*" ,(concat dotfiles-tmp-dir "autosaves/\\1") t))
 
  backup-by-copying t      ; don't clobber symlinks
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
  version-control t
- backup-directory-alist `((".*" . ,(concat dotfiles-tmp-dir "backups")))
- auto-save-file-name-transforms `((".*" ,(concat dotfiles-tmp-dir "autosaves/") t))
-
  diff-switches "-u"
 
  slime-protocol-version 'ignore
  slime-net-coding-system 'utf-8-unix
 
  inferior-lisp-program  "lein repl")
+
+;; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs.d/tmp/autosaves/" t)
 
 (smex-initialize)
 
