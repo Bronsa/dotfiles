@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+which realpath &>/dev/null || realpath() {
+  readlink -f -- $@
+}
+
+TOTAL="$(ls *.mp3 | wc -l)"
+
+for i in *.mp3; do
+  id3v2 -D "${i}"
+  id3v2 -a "$(basename "$(realpath ..)")" -A "$(basename "$(realpath .)")" -T "${i/ */}/${TOTAL}" -t "${${i//*- }%%.mp3}" "${i}"
+done
+

@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "(if (eq 0 (screen-id (current-screen))) (run-commands \"snext\"))" | /home/bronsa/bin/stumpish -e eval
+echo "run-shell-command firefox \"$@\"" | /home/bronsa/bin/stumpish
