@@ -4,7 +4,7 @@
 (fringe-mode 0)
 (global-hl-line-mode)
 (global-visual-line-mode 1)
-(iswitchb-mode t)
+(ido-mode t)
 (global-font-lock-mode t)
 (line-number-mode 1)
 (column-number-mode 1)
