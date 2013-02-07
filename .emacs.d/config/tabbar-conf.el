@@ -4,12 +4,18 @@
                ((memq major-mode '(shell-mode term-mode eshell-mode))
                 "Shell")
                ((or
-                 (memq  major-mode '(slime-mode slime-repl-mode compilation-mode sldb-mode slime-inspector-mode))
+                 (memq major-mode '(slime-mode slime-repl-mode compilation-mode sldb-mode slime-inspector-mode))
                  (equal "*slime-source*" (buffer-name (current-buffer)))
                  (equal "*inferior-lisp*" (buffer-name (current-buffer)))
                  (equal "*nrepl*" (buffer-name (current-buffer)))
                  (equal "*nrepl-error*" (buffer-name (current-buffer))))
                 "Lisp Interaction")
+               ((or (memq major-mode '(magit-mode magit-log-mode magit-commit-mode magit-key-mode magit-diff-mode
+                                                  magit-wip-mode magit-wip-save-mode magit-status-mode magit-stath-mode
+                                                  magit-log-edit-mode magit-branch-manager-mode magit-wazzup-mode
+                                                  magit-reflog-mode))
+                    (equal "*magit-process*" (buffer-name (current-buffer))))
+                "Magit")
                (t
                 "All")))))
 
