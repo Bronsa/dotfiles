@@ -81,5 +81,11 @@
 (global-set-key (kbd "C-c C-c SPC") 'ace-jump-char-mode)
 (global-set-key (kbd "C-c C-c C-c SPC") 'ace-jump-line-mode)
 
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+
+(define-key erc-mode-map (kbd "C-<up>") 'erc-previous-command)
+(define-key erc-mode-map (kbd "C-<down>") 'erc-next-command)
+
+
 ;; C-M-x eval-defun
 ;; C-q ( insert unmatched parenthesis

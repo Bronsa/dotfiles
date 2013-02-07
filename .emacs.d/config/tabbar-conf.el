@@ -8,7 +8,8 @@
                  (equal "*slime-source*" (buffer-name (current-buffer)))
                  (equal "*inferior-lisp*" (buffer-name (current-buffer)))
                  (equal "*nrepl*" (buffer-name (current-buffer)))
-                 (equal "*nrepl-error*" (buffer-name (current-buffer))))
+                 (equal "*nrepl-error*" (buffer-name (current-buffer)))
+                 (equal "*ielm*" (buffer-name (current-buffer))))
                 "Lisp Interaction")
                ((or (memq major-mode '(magit-mode magit-log-mode magit-commit-mode magit-key-mode magit-diff-mode
                                                   magit-wip-mode magit-wip-save-mode magit-status-mode magit-stath-mode
@@ -16,6 +17,8 @@
                                                   magit-reflog-mode))
                     (equal "*magit-process*" (buffer-name (current-buffer))))
                 "Magit")
+               ((memq major-mode '(erc-mode))
+                "ERC")
                (t
                 "All")))))
 
@@ -41,7 +44,9 @@
                                 (equal "*Compile-Log*" (buffer-name b))
                                 (equal "*Directory*" (buffer-name b))
                                 (equal "*Process List*" (buffer-name b))
-                                (equal "*Disabled Command*" (buffer-name b))) nil)
+                                (equal "*Disabled Command*" (buffer-name b))
+                                (equal "irc.freenode.net:6667" (buffer-name b))
+                                (equal "irc.azzurra.org:6667" (buffer-name b))) nil)
                            ((buffer-file-name b) b)
                            ((buffer-live-p b) b)))
                       (buffer-list)))))

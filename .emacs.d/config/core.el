@@ -53,12 +53,15 @@
                    'clojure-test-mode
                    'd-mode
                    'dircolors
+                   'erc
+                   'erc-services
                    'eval-sexp-fu
                    'haskell-mode
                    'highlight
                    'imenu+
                    'isearch+
                    'linum+
+                   'linum-off
                    'magit
                    'markdown-mode
                    'nrepl
@@ -70,7 +73,8 @@
                    'slime
                    'smex
                    'tabbar
-                   'undo-tree))
+                   'undo-tree
+                   'xgtags))
   (require lib))
 
 ;; Load config files
@@ -82,5 +86,6 @@
                            "modes.el"
                            "tabbar-conf.el"
                            "hooks.el"
-                           "look-and-feel.el"))
+                           "look-and-feel.el"
+                           "erc-conf.el"))
   (load-config-file config-file))

@@ -14,7 +14,7 @@
  indent-tabs-mode nil
  tab-width 4
  indent-line-function 'insert-tab
- fill-column 82
+ ;; fill-column 82
 
  default-major-mode 'text-mode
 
@@ -44,6 +44,9 @@
 
  slime-protocol-version 'ignore
  slime-net-coding-system 'utf-8-unix
+
+ linum-disabled-modes-list '(erc-mode compilation-mode dired-mode)
+ linum-disable-starred-buffers nil
 
  inferior-lisp-program  "lein repl")
 

@@ -38,9 +38,22 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(defun ac-cc-mode-setup ()
-  (setq ac-clang-complete-executable "~/.emacs.d/lib/auto-complete-clang-async/clang-complete")
-  (setq ac-sources '(ac-source-clang-async))
-  (ac-clang-launch-completion-process))
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (setq ac-clang-complete-executable "~/.emacs.d/lib/auto-complete-clang-async/clang-complete")
+            (setq ac-sources '(ac-source-clang-async))
+            (ac-clang-launch-completion-process)
+            (xgtags-mode 1)))
 
-(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+(make-variable-buffer-local 'erc-fill-column)
+(add-hook 'window-configuration-change-hook
+          '(lambda ()
+             (save-excursion
+               (walk-windows
+                (lambda (w)
+                  (let ((buffer (window-buffer w)))
+                    (set-buffer buffer)
+                    (when (eq major-mode 'erc-mode)
+                             (setq erc-fill-column (- (window-width w) 2)))))))))
+
+(add-hook 'erc-mode-hook 'erc-add-scroll-to-bottom)
