@@ -68,3 +68,68 @@
  'ac-clang-selection-face nil
  :background "gray20"
  :foreground "black")
+
+(setq-default
+ mode-line-format
+ (list
+  ;; the buffer name; the file name as a tool tip
+  '(:eval (propertize "%b" 'face 'font-lock-keyword-face
+                      'help-echo (buffer-file-name)))
+
+  '(vc-mode vc-mode)
+
+  ;; line and column
+  " (" ;; '%02' to set to 2 chars at least; prevents flickering
+  (propertize "%l" 'face 'font-lock-type-face)
+  ","
+  (propertize "%02c" 'face 'font-lock-type-face)
+  ") "
+
+  ;; relative position, size of file
+  "["
+  (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+  "/"
+  (propertize "%I" 'face 'font-lock-constant-face) ;; size
+  "] "
+
+  '(:eval erc-modified-channels-object)
+
+  '(:eval (when (not (string= erc-modified-channels-object ""))
+            (propertize " ")))
+
+  ;; the current major mode for the buffer.
+  "["
+
+  '(:eval (propertize "%m" 'face 'font-lock-string-face
+                      'help-echo buffer-file-coding-system))
+  "]"
+
+
+  ;; overwrite mode?
+  '(:eval (propertize (when overwrite-mode " Ins")
+                      'face 'font-lock-warning-face
+                      'help-echo "Buffer is in overwrite mode"))
+
+  ;; was this buffer modified since the last save?
+  '(:eval (when (buffer-modified-p)
+            (propertize " Mod"
+                        'face 'font-lock-warning-face
+                        'help-echo "Buffer has been modified")))
+
+  ;; is this buffer read-only?
+  '(:eval (when buffer-read-only
+            (propertize " RO"
+                        'face 'font-lock-type-face
+                        'help-echo "Buffer is read-only")))
+  " -- "
+
+  ;; add the time, with the date and the emacs uptime in the tooltip
+  '(:eval (propertize (format-time-string "%H:%M")
+                      'help-echo
+                      (concat (format-time-string "%c; ")
+                              (emacs-uptime "Uptime:%hh"))))
+  " --"
+
+  minor-mode-alist  ;; list of minor modes
+  " %-" ;; fill with '-'
+  ))
