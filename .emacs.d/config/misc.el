@@ -48,9 +48,11 @@
  linum-disabled-modes-list '(erc-mode compilation-mode dired-mode)
  linum-disable-starred-buffers nil
 
- undo-tree-history-directory-alist `((".*" ,(concat dotfiles-tmp-dir "undo")))
+ undo-tree-history-directory-alist  `(("." . ,(concat dotfiles-tmp-dir "undo")))
  undo-tree-auto-save-history t
  undo-tree-visualizer-diff t
+
+ completion-ignore-case t
 
  inferior-lisp-program  "lein repl")
 
@@ -72,3 +74,6 @@
 (defalias 'emacs 'find-file)
 (defalias 'open 'find-file)
 (defalias 'openo 'find-file-other-window)
+
+(add-to-list 'completion-styles 'substring)
+(add-to-list 'completion-styles 'initials)

@@ -135,5 +135,10 @@
 (set-face-background 'magit-item-highlight "gray15")
 (set-face-background 'magit-diff-hunk-header "gray15")
 (set-face-background 'magit-diff-file-header "gray15")
+(set-face-background 'magit-diff-add "gray15")
+(set-face-background 'magit-diff-del "gray15")
+(set-face-foreground 'magit-diff-add "dark sea green")
+(set-face-foreground 'magit-diff-del "brown3")
+
 (set-face-background 'diff-hunk-header "gray15")
 (set-face-background 'diff-file-header "gray15")

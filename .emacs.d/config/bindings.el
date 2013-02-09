@@ -86,6 +86,5 @@
 (define-key erc-mode-map (kbd "C-<up>") 'erc-previous-command)
 (define-key erc-mode-map (kbd "C-<down>") 'erc-next-command)
 
-
 ;; C-M-x eval-defun
 ;; C-q ( insert unmatched parenthesis

@@ -64,13 +64,11 @@
 
       erc-track-faces-priority-list '(erc-error-face
                                       erc-current-nick-face
-                                      erc-keyword-face
                                       erc-nick-msg-face
                                       erc-direct-msg-face
-                                      erc-dangerous-host-face
                                       erc-notice-face
                                       erc-prompt-face
-                                      erc-default-face))
+                                      erc-nick-default-face))
 
 (defun irc ()
   "Connect to ERC, or switch to last active buffer"
