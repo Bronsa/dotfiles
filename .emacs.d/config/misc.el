@@ -75,5 +75,5 @@
 (defalias 'open 'find-file)
 (defalias 'openo 'find-file-other-window)
 
-(add-to-list 'completion-styles 'substring)
+;; (add-to-list 'completion-styles 'substring)
 (add-to-list 'completion-styles 'initials)
