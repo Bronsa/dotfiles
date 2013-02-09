@@ -14,6 +14,7 @@
 ;; Add lib paths
 (dolist (path (list "ace"
                     "ac-nrepl"
+                    "ac-slime"
                     "align-cljlet"
                     "auto-complete"
                     "auto-complete-clang-async"
@@ -31,6 +32,7 @@
                     "nrepl"
                     "paredit"
                     "ruby-electric"
+                    "slime"
                     "smex"
                     "undo-tree"))
   (add-lib-path path))
@@ -39,6 +41,7 @@
 (dolist (lib (list 'ace-jump-mode
                    'ac-math
                    'ac-nrepl
+                   'ac-slime
                    'align-cljlet
                    'auto-complete
                    'auto-complete-clang-async
@@ -67,6 +70,7 @@
                    'ps-print
                    'ruby-electric
                    'saveplace
+                   'slime
                    'smex
                    'tabbar
                    'undo-tree

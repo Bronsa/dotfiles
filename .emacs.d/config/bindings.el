@@ -5,6 +5,33 @@
 (global-set-key (kbd "C-M-f")     'paredit-forward)
 (global-set-key (kbd "C-M-b")     'paredit-backward)
 
+;;C-c C-? bindings
+(global-set-key (kbd "C-c C-e")   'slime-eval-last-expression)
+
+;; slime mode shortcuts
+(global-set-key (kbd "C-c s c")     'slime-connect)
+(global-set-key (kbd "C-c s d")     (lambda () (interactive)
+                                     (when (get-buffer "*swank*")
+                                       (kill-buffer "*swank*"))
+                                     (let ((dir default-directory))
+                                       (cd (concat dotfiles-dir "/../.dummy-clj-prj"))
+                                       (let* ((proc (start-process-shell-command "swank" "*swank*" "lein swank")))
+                                         (set-process-filter (get-buffer-process "*swank*")
+                                                             (lambda (process output)
+                                                               (with-current-buffer "*swank*"
+                                                                 (insert output))
+                                                               (when (string-match "Connection opened on localhost port 4005." output)
+                                                                 (slime-connect "localhost" 4005)
+                                                                 (set-process-filter process nil)))))
+                                       (cd dir))
+                                     (message "Starting swank server...")))
+
+;; (global-set-key (kbd "C-c s e d")   'slime-eval-defun)
+;; (global-set-key (kbd "C-c s e m")   'slime-eval-macroexpand-inplace)
+;; (global-set-key (kbd "C-c s e n")   'slime-eval-print-last-expression)
+;; (global-set-key (kbd "C-c s e r")   'slime-eval-region)
+
+
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "M-D") 'backward-kill-word)
