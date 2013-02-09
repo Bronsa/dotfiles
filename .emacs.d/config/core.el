@@ -81,7 +81,6 @@
 (dolist (config-file (list "auto-complete-conf.el"
                            "auto-modes.el"
                            "bindings.el"
-                           "clojure-conf.el"
                            "misc.el"
                            "modes.el"
                            "tabbar-conf.el"

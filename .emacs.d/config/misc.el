@@ -3,6 +3,7 @@
 
 (setq-default
  font-lock-maximum-decoration t
+
  require-final-newline t
  next-line-add-newlines nil
 
@@ -10,7 +11,6 @@
 
  case-fold-search t
 
- ;; Set indentation rules
  indent-tabs-mode nil
  tab-width 4
  indent-line-function 'insert-tab
@@ -18,14 +18,8 @@
 
  default-major-mode 'text-mode
 
- next-line-add-newlines nil
- require-final-newline t
-
  display-time-24hr-format t
  display-time-day-and-date t
-
- european-calendar-style t
- calendar-week-start-day 1
 
  save-place t
  save-place-file (concat dotfiles-tmp-dir "places")
@@ -42,15 +36,15 @@
  version-control t
  diff-switches "-u"
 
+ undo-tree-history-directory-alist  `(("." . ,(concat dotfiles-tmp-dir "undo")))
+ undo-tree-auto-save-history t
+ undo-tree-visualizer-diff t
+
  slime-protocol-version 'ignore
  slime-net-coding-system 'utf-8-unix
 
  linum-disabled-modes-list '(erc-mode compilation-mode dired-mode)
  linum-disable-starred-buffers nil
-
- undo-tree-history-directory-alist  `(("." . ,(concat dotfiles-tmp-dir "undo")))
- undo-tree-auto-save-history t
- undo-tree-visualizer-diff t
 
  completion-ignore-case t
 
@@ -62,7 +56,7 @@
 (smex-initialize)
 
 (slime-setup
- '(slime-scratch slime-fancy slime-fuzzy slime-repl))
+ '(slime-scratch slime-fancy slime-repl))
 
 (defun indent-file ()
   "indent whole buffer and untabify it"

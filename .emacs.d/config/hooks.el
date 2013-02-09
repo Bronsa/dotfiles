@@ -1,3 +1,46 @@
+(add-hook 'slime-repl-mode-hook
+          (lambda ()
+            (clojure-mode-font-lock-setup)
+            (font-lock-mode)
+            (font-lock-mode)))
+
+(defadvice slime-repl-emit (after sr-emit-ad activate)
+  (with-current-buffer (slime-output-buffer)
+    (add-text-properties slime-output-start slime-output-end
+                         '(font-lock-face slime-repl-output-face
+                                          rear-nonsticky (font-lock-face)))))
+
+(defadvice slime-repl-insert-prompt (after sr-prompt-ad activate)
+  (with-current-buffer (slime-output-buffer)
+    (let ((inhibit-read-only t))
+      (add-text-properties slime-repl-prompt-start-mark (point-max)
+                           '(font-lock-face slime-repl-prompt-face
+                                            rear-nonsticky
+                                            (slime-repl-prompt
+                                             read-only
+                                             font-lock-face
+                                             intangible))))))
+
+
+(defun slime-clojure-repl-setup ()
+  (define-key slime-repl-mode-map
+    (kbd "DEL") 'paredit-backward-delete)
+  (define-key slime-repl-mode-map
+    (kbd "{") 'paredit-open-curly)
+  (define-key slime-repl-mode-map
+    (kbd "}") 'paredit-close-curly)
+  (modify-syntax-entry ?\{ "(}")
+  (modify-syntax-entry ?\} "){")
+  (modify-syntax-entry ?\[ "(]")
+  (modify-syntax-entry ?\] ")[")
+  (modify-syntax-entry ?~ "'   ")
+  (modify-syntax-entry ?, "    ")
+  (modify-syntax-entry ?^ "'")
+  (modify-syntax-entry ?= "'")
+  (setq lisp-indent-function 'clojure-indent-function))
+
+(add-hook 'slime-repl-mode-hook 'slime-clojure-repl-setup)
+
 (dolist (hook (list 'lisp-mode-hook
                     'lisp-interaction-mode-hook
                     'emacs-lisp-mode-hook
@@ -10,19 +53,13 @@
   (add-hook hook 'enable-paredit-mode)
   (add-hook hook 'auto-highlight-symbol-mode))
 
-(add-hook 'slime-connected-hook (lambda () (slime-repl-send-string "(use 'clojure.repl)")))
-
-(add-hook 'nrepl-interaction-mode-hook
-          'nrepl-turn-on-eldoc-mode)
-(add-hook 'nrepl-mode-hook 'subword-mode)
+(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
 
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
 (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
 
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
-(dolist (hook (list 'set-up-slime-ac
-                    'clojure-mode-font-lock-setup))
-  (add-hook 'slime-repl-mode-hook hook))
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 
 (dolist (mode '(text-mode html-mode sh-mode clojure-mode lisp-mode ruby-mode markdown-mode nrepl-mode latex-mode))
   (add-to-list 'ac-modes mode))
