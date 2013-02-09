@@ -142,3 +142,7 @@
 
 (set-face-background 'diff-hunk-header "gray15")
 (set-face-background 'diff-file-header "gray15")
+(set-face-background 'diff-added "gray15")
+(set-face-background 'diff-removed "gray15")
+(set-face-foreground 'diff-added "dark sea green")
+(set-face-foreground 'diff-removed "brown3")
