@@ -88,8 +88,6 @@
   ;; relative position, size of file
   "["
   (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
-  "/"
-  (propertize "%I" 'face 'font-lock-constant-face) ;; size
   "] "
 
   '(:eval erc-modified-channels-object)
@@ -133,3 +131,9 @@
   minor-mode-alist  ;; list of minor modes
   " %-" ;; fill with '-'
   ))
+
+(set-face-background 'magit-item-highlight "gray15")
+(set-face-background 'magit-diff-hunk-header "gray15")
+(set-face-background 'magit-diff-file-header "gray15")
+(set-face-background 'diff-hunk-header "gray15")
+(set-face-background 'diff-file-header "gray15")

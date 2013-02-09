@@ -48,6 +48,8 @@
  linum-disabled-modes-list '(erc-mode compilation-mode dired-mode)
  linum-disable-starred-buffers nil
 
+ undo-tree-auto-save-history t
+
  inferior-lisp-program  "lein repl")
 
 ;; create the autosave dir if necessary, since emacs won't.
