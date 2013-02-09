@@ -42,9 +42,6 @@
  version-control t
  diff-switches "-u"
 
- slime-protocol-version 'ignore
- slime-net-coding-system 'utf-8-unix
-
  linum-disabled-modes-list '(erc-mode compilation-mode dired-mode)
  linum-disable-starred-buffers nil
 
@@ -60,9 +57,6 @@
 (make-directory "~/.emacs.d/tmp/autosaves/" t)
 
 (smex-initialize)
-
-(slime-setup
- '(slime-scratch slime-fancy slime-fuzzy slime-repl))
 
 (defun indent-file ()
   "indent whole buffer and untabify it"
