@@ -58,6 +58,8 @@
 (slime-setup
  '(slime-scratch slime-fancy slime-repl))
 
+(define-key slime-repl-mode-map (kbd "M-RET") 'slime-repl-newline-and-indent)
+
 (defun indent-file ()
   "indent whole buffer and untabify it"
   (interactive)

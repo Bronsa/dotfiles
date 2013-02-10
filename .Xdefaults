@@ -18,7 +18,8 @@ URxvt.pointerColor:#ffffff
 URxvt.scrollstyle:      plain
 URxvt.secondaryScroll:  true
 URxvt.underlineURLs:      true
-URxvt.urlLauncher:          launch-firefox
+URxvt.url-launcher:          launch-firefox
+URxvt.keysym.C-Delete:  perl:matcher:last
 URxvt.matcher.button:       1
 URxvt.buffered:             true
 URxvt.showMenu:             false
@@ -35,3 +36,4 @@ URxvt.externalBorder:       0
 URxvt.searchable-scrollback: CM-s
 URxvt*color4:    #a9cdeb
 URxvt*color12:    #165eab
+URxvt.keysym.C-Return: \033\015
