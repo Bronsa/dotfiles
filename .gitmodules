@@ -73,3 +73,6 @@
 [submodule ".emacs.d/lib/slime"]
 	path = .emacs.d/lib/slime
 	url = https://github.com/Bronsa/slime.git
+[submodule ".emacs.d/lib/popup"]
+	path = .emacs.d/lib/popup
+	url = https://github.com/auto-complete/popup-el.git

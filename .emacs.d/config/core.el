@@ -31,6 +31,7 @@
                     "markdown-mode"
                     "nrepl"
                     "paredit"
+                    "popup"
                     "ruby-electric"
                     "slime"
                     "smex"
@@ -67,6 +68,7 @@
                    'nrepl
                    'paren
                    'paredit
+                   'popup
                    'ps-print
                    'ruby-electric
                    'saveplace
