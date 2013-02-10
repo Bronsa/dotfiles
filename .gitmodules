@@ -4,9 +4,6 @@
 [submodule ".emacs.d/lib/auto-complete"]
 	path = .emacs.d/lib/auto-complete
 	url = https://github.com/auto-complete/auto-complete.git
-[submodule ".emacs.d/lib/clojure-mode"]
-	path = .emacs.d/lib/clojure-mode
-	url = https://github.com/technomancy/clojure-mode.git
 [submodule ".emacs.d/lib/elein"]
 	path = .emacs.d/lib/elein
 	url = https://github.com/remvee/elein.git
@@ -61,9 +58,6 @@
 [submodule ".emacs.d/lib/ac-slime"]
 	path = .emacs.d/lib/ac-slime
 	url = https://github.com/purcell/ac-slime.git
-[submodule ".emacs.d/lib/slime"]
-	path = .emacs.d/lib/slime
-	url = https://github.com/technomancy/slime.git
 [submodule ".zoppo"]
 	path = .zoppo
 	url = https://github.com/zoppo/zoppo.git
@@ -73,3 +67,9 @@
 [submodule ".emacs.d/lib/auto-complete-clang-async"]
 	path = .emacs.d/lib/auto-complete-clang-async
 	url = https://github.com/Golevka/emacs-clang-complete-async.git
+[submodule ".emacs.d/lib/clojure-mode"]
+	path = .emacs.d/lib/clojure-mode
+	url = https://github.com/Bronsa/clojure-mode.git
+[submodule ".emacs.d/lib/slime"]
+	path = .emacs.d/lib/slime
+	url = https://github.com/Bronsa/slime.git
