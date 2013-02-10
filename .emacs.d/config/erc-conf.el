@@ -52,7 +52,7 @@
 
       erc-current-nick-highlight-type 'nick
 
-      erc-format-nick-function 'erc-format-@nick
+      ;; erc-format-nick-function 'erc-format-@nick
 
       erc-track-position-in-mode-line 'after-modes
       erc-track-shorten-function nil
