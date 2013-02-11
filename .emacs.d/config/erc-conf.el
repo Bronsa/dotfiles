@@ -5,7 +5,8 @@
  '(erc-modules '(autojoin completion fill irccontrols list
                           log move-to-prompt netsplit networks
                           noncommands readonly ring services match stamp ;; load match before stamp otherwise it'll fail to match
-                          spelling track truncate scrolltobottom)))
+                          ;;spelling
+                          track truncate scrolltobottom)))
 
 (add-to-list 'erc-nickserv-alist
              '(Azzurra
@@ -32,7 +33,7 @@
       erc-kill-buffer-on-part nil
 
       erc-fill-column (- (/ (frame-width) 2) 2)
-      erc-fill-prefix "       | "
+      erc-fill-prefix "        | "
 
       erc-server-reconnect-timeout 10
 
