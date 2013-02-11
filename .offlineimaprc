@@ -1,0 +1,20 @@
+[general]
+ui = ttyui
+accounts = Gmail
+
+[Account Gmail]
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/.mail
+
+[Repository Gmail-Remote]
+type = Gmail
+remoteuser = brobronsa@gmail.com
+remotepass =
+realdelete = no
+maxconnections = 3
+
+cert_fingerprint = 6d1b5b5ee0180ab493b71d3b94534b5ab937d042

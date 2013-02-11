@@ -76,3 +76,6 @@
 [submodule ".emacs.d/lib/popup"]
 	path = .emacs.d/lib/popup
 	url = https://github.com/auto-complete/popup-el.git
+[submodule ".emacs.d/lib/emms"]
+	path = .emacs.d/lib/emms
+	url = https://github.com/emacsmirror/emms.git
