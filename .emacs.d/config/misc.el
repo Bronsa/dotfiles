@@ -4,6 +4,10 @@
 (setq-default
  font-lock-maximum-decoration t
 
+ abbrev-mode t
+ abbrev-file-name (concat dotfiles-dir "abbrevs")
+ save-abbrevs nil
+
  require-final-newline t
  next-line-add-newlines nil
 
@@ -49,6 +53,8 @@
  completion-ignore-case t
 
  inferior-lisp-program  "lein repl")
+
+(quietly-read-abbrev-file)
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/tmp/autosaves/" t)

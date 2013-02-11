@@ -70,5 +70,9 @@
 (define-key erc-mode-map (kbd "C-<up>") 'erc-previous-command)
 (define-key erc-mode-map (kbd "C-<down>") 'erc-next-command)
 
+(global-set-key (kbd "C-c q") 'join-line)
+
+(global-set-key (kbd "C-c g") 'magit-status)
+
 ;; C-M-x eval-defun
 ;; C-q ( insert unmatched parenthesis
