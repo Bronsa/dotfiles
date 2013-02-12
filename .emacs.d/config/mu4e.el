@@ -30,6 +30,8 @@
       mu4e-headers-leave-behavior 'apply
       mu4e-show-images nil
 
+      mu4e-update-interval 60
+
       mu4e-use-fancy-chars t
 
       mu4e-confirm-quit nil)

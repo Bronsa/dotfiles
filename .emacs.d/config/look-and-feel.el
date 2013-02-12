@@ -135,3 +135,9 @@
 (set-face-background 'diff-removed "gray15")
 (set-face-foreground 'diff-added "dark sea green")
 (set-face-foreground 'diff-removed "brown3")
+
+(custom-set-faces
+ '(message-header-cc ((t (:foreground "color-33"))))
+ '(message-header-newsgroups ((t (:foreground "color-33" :slant italic :weight bold))))
+ '(message-header-subject ((t (:foreground "brightblue" :weight bold))))
+ '(message-header-to ((t (:foreground "color-33" :weight bold)))))
