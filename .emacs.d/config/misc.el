@@ -47,7 +47,8 @@
  slime-protocol-version 'ignore
  slime-net-coding-system 'utf-8-unix
 
- linum-disabled-modes-list '(erc-mode compilation-mode dired-mode)
+ linum-disabled-modes-list '(erc-mode compilation-mode dired-mode mpc-mode mpc-status-mode
+                                      mpc-tagbrowser-mode mpc-tagbrowser-dir-mode mpc-songs-mode)
  linum-disable-starred-buffers nil
 
  completion-ignore-case t
