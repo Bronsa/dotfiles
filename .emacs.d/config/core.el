@@ -29,7 +29,6 @@
                     "linum-plus"
                     "magit"
                     "markdown-mode"
-                    "mingus"
                     "mu4e"
                     "nrepl"
                     "paredit"
@@ -67,7 +66,7 @@
                    'linum-off
                    'magit
                    'markdown-mode
-                   'mingus
+                   'mpc
                    'mu4e
                    'nrepl
                    'paren
@@ -89,7 +88,7 @@
                            "bindings.el"
                            "misc.el"
                            "modes.el"
-                           "mingus.el"
+                           "mpc.el"
                            "mu4e.el"
                            "tabbar-conf.el"
                            "hooks.el"

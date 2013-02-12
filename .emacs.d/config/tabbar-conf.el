@@ -23,7 +23,7 @@
                 "IRC")
                ((memq major-mode '(dired-mode))
                 "Dired")
-               ((memq major-mode '(mingus-playlist-mode mingus-browse-mode mingus-help-mode))
+               ((memq major-mode '(mpc-mode))
                 "Music")
                (t
                 "All")))))
