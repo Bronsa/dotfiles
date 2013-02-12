@@ -70,6 +70,9 @@
 (define-key erc-mode-map (kbd "C-<up>") 'erc-previous-command)
 (define-key erc-mode-map (kbd "C-<down>") 'erc-next-command)
 
+(define-key mpc-songs-mode-map (kbd "RET") 'mpc-play-at-point)
+(define-key mpc-songs-mode-map (kbd "M-RET") 'mpc-play)
+
 (global-set-key (kbd "C-c q") 'join-line)
 (global-set-key (kbd "C-c g") 'magit-status)
 
