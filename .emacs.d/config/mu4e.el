@@ -30,7 +30,8 @@
       mu4e-headers-leave-behavior 'apply
       mu4e-show-images nil
 
-      mu4e-update-interval 60
+      ;; we do this with an external timer so it runs even when mu4e is not already started
+      mu4e-update-interval nil
 
       mu4e-use-fancy-chars t
 
@@ -80,3 +81,7 @@
           (setq new-mail new)))))
 
 (setq mu4e-info-func 'new-mail-handler)
+
+(run-with-timer 0 60
+                (lambda ()
+                  (mu4e-update-mail-and-index t)))

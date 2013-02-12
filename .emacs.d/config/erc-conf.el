@@ -104,13 +104,13 @@
 
 
                     "["
-                    '(:eval (propertize (format "%s" new-mail)
-                                        'face (if (> new-mail 0)
-                                                  'font-lock-warning-face
-                                                'font-lock-constant-face)))
+                    (:eval (propertize (format "%s" new-mail)
+                                       'face (if (> new-mail 0)
+                                                 'font-lock-warning-face
+                                               'font-lock-constant-face)))
                     "/"
-                    '(:eval (propertize (format "%s" total-mail)
-                                        'face 'font-lock-constant-face))
+                    (:eval (propertize (format "%s" total-mail)
+                                       'face 'font-lock-constant-face))
                     "] "
 
 
