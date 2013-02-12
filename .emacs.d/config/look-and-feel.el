@@ -4,8 +4,6 @@
 ;;enable visual feedback on selections
 (setq-default transient-mark-mode t)
 
-(set-frame-font "DejaVu Sans Mono-8")
-
 (setq
      ;; Don't show a cursor in other windows
      cursor-in-non-selected-windows nil
@@ -83,6 +81,16 @@
 
   '(:eval (when (not (string= erc-modified-channels-object ""))
             (propertize " ")))
+
+  "["
+  '(:eval (propertize (format "%s" new-mail)
+                     'face (if (> new-mail 0)
+                               'font-lock-warning-face
+                             'font-lock-constant-face)))
+  "/"
+  '(:eval (propertize (format "%s" total-mail)
+                      'face 'font-lock-constant-face))
+  "] "
 
   ;; the current major mode for the buffer.
   "["

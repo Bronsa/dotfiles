@@ -34,9 +34,17 @@
 
       mu4e-use-fancy-chars t
 
-      mu4e-confirm-quit nil)
+      mu4e-confirm-quit nil
 
-(setq message-send-mail-function 'smtpmail-send-it
+      mu4e-headers-date-format "%d %b, %Y at %H:%M"
+
+      mu4e-headers-fields
+      '((:date . 24)
+        (:flags . 6)
+        (:from . 24)
+        (:subject . nil))
+
+      message-send-mail-function 'smtpmail-send-it
 
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
 
@@ -50,4 +58,25 @@
       user-mail-address "brobronsa@gmail.com"
       user-full-name "Nicola Mometto"
 
-      message-kill-buffer-on-exit t)
+      message-kill-buffer-on-exit t
+
+      mu4e-html2text-command "html2text")
+
+(defvar total-mail 0)
+(defvar new-mail 0)
+
+(defun get-new-mail-count ()
+  (string-to-number
+   (replace-regexp-in-string
+    "![0-9]" "" (shell-command-to-string "mu find maildir:/inbox flag:unread | wc -l"))))
+
+(defun new-mail-handler (&rest args)
+  (setq sexp (car args))
+  (let ((total (plist-get sexp :processed))
+        (new (get-new-mail-count)))
+    (if (equal (plist-get sexp :status) 'complete)
+        (progn
+          (setq total-mail total)
+          (setq new-mail new)))))
+
+(setq mu4e-info-func 'new-mail-handler)

@@ -68,6 +68,7 @@
                    'markdown-mode
                    'mpc
                    'mu4e
+                   'mu4e-utils
                    'nrepl
                    'paren
                    'paredit
