@@ -1,0 +1,8 @@
+#port "6600"
+music_directory "/media/Music"
+
+playlist_directory "~/.mpd/playlists"
+db_file            "~/.mpd/database"
+log_file           "~/.mpd/log"
+pid_file           "~/.mpd/pid"
+state_file         "~/.mpd/state"

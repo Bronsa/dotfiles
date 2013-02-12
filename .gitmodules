@@ -82,3 +82,6 @@
 [submodule ".emacs.d/lib/mu4e"]
 	path = .emacs.d/lib/mu4e
 	url = https://github.com/emacsmirror/mu4e.git
+[submodule ".emacs.d/lib/mingus"]
+	path = .emacs.d/lib/mingus
+	url = git://github.com/pft/mingus.git
