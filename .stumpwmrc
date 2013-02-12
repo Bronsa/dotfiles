@@ -1,7 +1,7 @@
 (in-package :stumpwm)
 (setf *default-package* :stumpwm)
 
-(mapcar #'load-module '("sbclfix" "stumptray"))
+(mapcar #'load-module '("sbclfix" "stumptray" "mpd"))
 
 (set-prefix-key (kbd "C-f"))
 (set-fg-color "Gray")
@@ -19,7 +19,7 @@
 
 (defcommand irssi () ()
             "run irssi"
-            (run-or-raise "urxvtc -title irssi -e irssi" '(:title "irssi")))
+            (run-or-raise "urxvtc -title irssi" '(:title "irssi")))
 
 (clear-window-placement-rules)
 
@@ -40,13 +40,13 @@
             (focus-prev-frame (current-group)))
 
 (defcommand vol-down () ()
-            (run-shell-command "amixer set Speaker playback 0.75dB-"))
+            (run-shell-command "amixer set Master playback 1-"))
 
 (defcommand vol-up () ()
-            (run-shell-command "amixer set Speaker playback 0.75dB+"))
+            (run-shell-command "amixer set Master playback 1+"))
 
 (defcommand vol-toggle () ()
-            (run-shell-command "amixer set Speaker toggle"))
+            (run-shell-command "amixer set Master toggle"))
 
 (setf
  *mode-line-click-hook*
@@ -140,26 +140,31 @@
 (define-key *top-map*  (kbd "M-TAB")               "snext")
 (define-key *top-map*  (kbd "C-M-DEL")             "quit")
 (define-key *top-map*  (kbd "C-2")                 "firefox")
-(define-key *top-map*  (kbd "XF86AudioPrev")       "exec cmus-remote --prev")
-(define-key *top-map*  (kbd "XF86AudioPlay")       "exec cmus-remote --pause")
-(define-key *top-map*  (kbd "XF86AudioStop")       "exec cmus-remote --stop")
-(define-key *top-map*  (kbd "XF86AudioNext")       "exec cmus-remote --next")
-(define-key *top-map*  (kbd "XF86AudioLowerVolume")"vol-down")
+(define-key *top-map*  (kbd "C-1")                 "exec dbus-launch thunar")
+(define-key *top-map*  (kbd "XF86AudioPrev")       "mpd-prev")
+(define-key *top-map*  (kbd "XF86AudioPlay")       "mpd-toggle-pause")
+(define-key *top-map*  (kbd "XF86AudioStop")       "mpd-stop")
+(define-key *top-map*  (kbd "XF86AudioNext")       "mpd-next")
+(define-key *top-map*  (kbd "XF86AudioLowerVolume")"mpd-volume-down")
 (define-key *top-map*  (kbd "XF86AudioMute")       "vol-toggle")
-(define-key *top-map*  (kbd "XF86AudioRaiseVolume")"vol-up")
+(define-key *top-map*  (kbd "XF86AudioRaiseVolume")"mpd-volume-up")
 
 (when *initializing*
   (banish)
   (run-commands
+   "mpd-connect"
    "grename Default0"
    "exec display -window root /media/old/Pictures/bg6.png"
-   "vsplit"
-   "exec urxvtc -e cmus"
-   "irssi"
+   "exec urxvtc -title emacs -e emacsclient -c -nw"
+   ; "vsplit"
+   ; "exec urxvtc"
+   ; "irssi"
    "stumptray"
    "snext"
    "grename Default1"
    "stumptray"
    "exec display -window root /media/old/Pictures/bg6.png"
    "exec urxvtc -title emacs -e emacsclient -c -nw"
-   "firefox"))
+   "firefox"
+   "exec hp-systray"
+   "exec dropboxd"))
