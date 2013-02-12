@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # azzoppati {{{
 [ -s "${ZDOTDIR:-$HOME}/.zoppo/zoppo.zsh" ] && source "${ZDOTDIR:-$HOME}/.zoppo/zoppo.zsh"
 # }}}
@@ -11,7 +13,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:halt:reboot"
 HISTFILE=~/.histfile
 
-export TERM="xterm-256color"
 if (( UID != 0 )); then
     export PS1=$'%{\e[0;34m%}[%{\e[0;36m%}%~%{\e[0;34m%}] %{\e[00m%}~ '
 else
@@ -29,13 +30,14 @@ export IRCNAME="Bronsa"
 export PAGER="most"
 export LANGUAGE=en
 export LANG=en_US.UTF-8
+export MAILDIR=$HOME/.mail
 export PRINTER="Photosmart_C4400"
 # alias ls='ls $LS_OPTIONS --ignore "#*#" --ignore "*~"'
 alias ll='ls -l'
 alias la='ls -a'
 alias EMACS=/usr/bin/emacs
 alias emacs='emacsclient -c -nw'
-alias xemacs='emacsclient -c -n -e "(set-mouse-color \"white\")"'
+# alias xemacs='emacsclient -c -n -e "(set-mouse-color \"white\")"'
 export BREAK_CHARS="\"#'(),;\`\\|!?[]{}"
 # alias java=drip
 alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -server -XX:+TieredCompilation -Xbootclasspath/a:/home/bronsa/src/clojure/target/clojure-1.5.0-master-SNAPSHOT.jar clojure.main"

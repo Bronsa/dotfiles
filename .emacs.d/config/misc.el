@@ -79,3 +79,5 @@
 
 ;; (add-to-list 'completion-styles 'substring)
 (add-to-list 'completion-styles 'initials)
+
+(defalias 'byte-compile-cl-warn 'identity)

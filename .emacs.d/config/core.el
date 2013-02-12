@@ -21,6 +21,7 @@
                     "auto-highlight-symbol-mode"
                     "clojure-mode"
                     "color-theme"
+                    "emms/lisp"
                     "eval-sexp-fu"
                     "haskell-mode"
                     "highlight"
@@ -29,6 +30,7 @@
                     "linum-plus"
                     "magit"
                     "markdown-mode"
+                    "mu4e"
                     "nrepl"
                     "paredit"
                     "popup"
@@ -54,6 +56,7 @@
                    'clojure-test-mode
                    'd-mode
                    'dircolors
+                   'emms-setup
                    'erc
                    'erc-services
                    'eval-sexp-fu
@@ -65,6 +68,7 @@
                    'linum-off
                    'magit
                    'markdown-mode
+                   'mu4e
                    'nrepl
                    'paren
                    'paredit
@@ -83,8 +87,10 @@
 (dolist (config-file (list "auto-complete-conf.el"
                            "auto-modes.el"
                            "bindings.el"
+                           "emms.el"
                            "misc.el"
                            "modes.el"
+                           "mu4e.el"
                            "tabbar-conf.el"
                            "hooks.el"
                            "look-and-feel.el"

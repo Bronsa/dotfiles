@@ -17,8 +17,12 @@
                                                   magit-reflog-mode))
                     (equal "*magit-process*" (buffer-name (current-buffer))))
                 "Magit")
+               ((memq major-mode '(mu4e-main-mode mu4e-view-mode mu4e-compose-mode mu4e-headers-mode message-mode mail-mode))
+                "Mail")
                ((memq major-mode '(erc-mode))
-                "ERC")
+                "IRC")
+               ((memq major-mode '(dired-mode))
+                "Dired")
                (t
                 "All")))))
 
