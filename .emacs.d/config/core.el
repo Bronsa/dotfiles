@@ -86,7 +86,6 @@
 ;; Load config files
 (dolist (config-file (list "auto-complete-conf.el"
                            "auto-modes.el"
-                           "bindings.el"
                            "misc.el"
                            "modes.el"
                            "mpc.el"
@@ -94,5 +93,6 @@
                            "tabbar-conf.el"
                            "hooks.el"
                            "look-and-feel.el"
+                           "bindings.el"
                            "erc-conf.el"))
   (load-config-file config-file))

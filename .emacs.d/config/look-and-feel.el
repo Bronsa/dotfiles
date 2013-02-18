@@ -143,6 +143,7 @@
 (set-face-background 'diff-removed "gray15")
 (set-face-foreground 'diff-added "dark sea green")
 (set-face-foreground 'diff-removed "brown3")
+(set-face-background 'diff-header "gray15")
 
 (custom-set-faces
  '(message-header-cc ((t (:foreground "color-33"))))

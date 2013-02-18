@@ -17,7 +17,7 @@ zstyle ':zoppo:update' force 'yes'
 zstyle ':zoppo:editor' mode 'emacs'
 
 # autoconvert .. to parent directory
-zstyle ':zoppo:editor' dot-expansion 'yes'
+zstyle ':zoppo:editor' dot-expansion 'no'
 
 # set case-sensitivity for completion, history lookup, etc
 zstyle ':zoppo:*:*' case-sensitive 'no'
@@ -27,19 +27,17 @@ zstyle ':zoppo:*:*' color 'yes'
 
 # plugins to load
 zstyle ':zoppo:load' plugins 'utility' 'completion' 'editor' 'history' 'archive' 'sudo' \
-  'fasd' 'syntax-highlight' 'history-substring-search' 'agent' # comment this line if the shell is too slow
+       'fasd' 'syntax-highlight' 'history-substring-search' 'agent' # comment this line if the shell is too slow
 
 # sudo
-zstyle ':zoppo:plugin:sudo' environments 'utils' 'system'
+zstyle ':zoppo:plugin:sudo' environments 'utils' 'system' 'arch' 'editors'
 
 # prompt
 zstyle ':zoppo' prompt 'borra' # choose a theme 'bluesky' or 'darkblood'
 
 zstyle ':zoppo:plugin:utility' interactive
 
-zstyle ':zoppo:plugin:aliases' programs 'git' 'rsync' 'perl' 'ruby' 'python' 'ls'
+zstyle ':zoppo:plugin:aliases' programs 'git' 'rsync' 'ls'
 
 zstyle ':zoppo:plugin:agent:ssh' enable 'yes'
 zstyle ':zoppo:plugin:agent:gpg' enable 'yes'
-
-# vim: ft=zsh sts=2 ts=2 sw=2 et fdm=marker fmr={{{,}}}

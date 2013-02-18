@@ -11,6 +11,6 @@
     ("proco" "porco")))
 
 (define-abbrev-table 'global-abbrev-table
-  '(("lmbda" "λ")
-    ("infty" "∞")
+  '(;; ("lmbda" "λ")
+    ;; ("infty" "∞")
     ("waht" "what")))

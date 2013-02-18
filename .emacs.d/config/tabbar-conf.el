@@ -54,6 +54,7 @@
                                 (equal "irc.freenode.net:6667" (buffer-name b))
                                 (equal "irc.azzurra.org:6667" (buffer-name b))
                                 (equal "*Backtrace*" (buffer-name b))
+                                (equal "*trace of SMTP session to smtp.gmail.com*" (buffer-name b))
                                 (memq (buffer-local-value 'major-mode b)
                                       '(mu4e-main-mode mu4e-view-mode mu4e-compose-mode mu4e-headers-mode message-mode mail-mode))
                                 (memq (buffer-local-value 'major-mode b)

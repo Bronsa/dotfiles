@@ -1,8 +1,6 @@
-(setq erc-nick "Bronsa"
-      erc-user-full-name "Bronco")
-
 (custom-set-variables
- '(erc-modules '(autojoin completion fill irccontrols list
+ '(erc-modules '(autojoin completion;; fill
+                          irccontrols list
                           log move-to-prompt netsplit networks
                           noncommands readonly ring services match stamp ;; load match before stamp otherwise it'll fail to match
                           ;;spelling
@@ -16,7 +14,15 @@
                "IDENTIFY"
                nil))
 
-(setq erc-prompt-for-nickserv-password nil
+(setq erc-nick "Bronsa"
+      erc-user-full-name "Nicola Mometto"
+      erc-email-userid "brobronsa@gmail.com"
+
+      erc-nick-uniquifier "`"
+      erc-try-new-nick-p t
+
+      erc-prompt-for-nickserv-password nil
+
       erc-nickserv-passwords
       '((freenode (("Bronsa" . "")
                    ("Bronsa`" . "")))
@@ -32,8 +38,8 @@
       erc-auto-query 'bury
       erc-kill-buffer-on-part nil
 
-      erc-fill-column (- (/ (frame-width) 2) 2)
-      erc-fill-prefix "        | "
+      ;; erc-fill-column (- (/ (frame-width) 2) 2)
+      ;; erc-fill-prefix "        | "
 
       erc-server-reconnect-timeout 10
 
