@@ -24,10 +24,10 @@
       erc-prompt-for-nickserv-password nil
 
       erc-nickserv-passwords
-      '((freenode (("Bronsa" . "")
-                   ("Bronsa`" . "")))
-        (Azzurra (("Bronsa" . "")
-                  ("Bronsa`" . ""))))
+      '((freenode (("Bronsa" . "<password>")
+                   ("Bronsa`" .  "<password>")))
+        (Azzurra (("Bronsa" .  "<password>")
+                  ("Bronsa`" .  "<password>"))))
 
       erc-autojoin-channels-alist '((".*\\freenode.net" "#distro" "#carthy" "#clojure")
                                     (".*\\azzurra.org" "#py")                                    )

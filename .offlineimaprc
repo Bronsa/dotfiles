@@ -13,7 +13,7 @@ localfolders = ~/.mail
 [Repository Gmail-Remote]
 type = Gmail
 remoteuser = brobronsa@gmail.com
-remotepass =
+remotepass = <password>
 realdelete = no
 maxconnections = 3
 
