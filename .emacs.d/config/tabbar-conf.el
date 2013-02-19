@@ -61,6 +61,7 @@
                                 (string-match "\\*draft\\*.*" (buffer-name b))
                                 (memq (buffer-local-value 'major-mode b)
                                       '(mpc-mode mpc-status-mode mpc-tagbrowser-mode mpc-tagbrowser-dir-mode mpc-songs-mode))
+                                (equal "*dirtree*" (buffer-name b))
                                 (equal "*undo-tree Diff*" (buffer-name b))) nil)
                            ((buffer-file-name b) b)
                            ((buffer-live-p b) b)))
