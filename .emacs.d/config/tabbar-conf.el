@@ -58,6 +58,7 @@
                                 (equal "*trace of SMTP session to smtp.gmail.com*" (buffer-name b))
                                 (memq (buffer-local-value 'major-mode b)
                                       '(mu4e-main-mode mu4e-view-mode mu4e-compose-mode mu4e-headers-mode message-mode mail-mode))
+                                (string-match "\\*draft\\*.*" (buffer-name b))
                                 (memq (buffer-local-value 'major-mode b)
                                       '(mpc-mode mpc-status-mode mpc-tagbrowser-mode mpc-tagbrowser-dir-mode mpc-songs-mode))
                                 (equal "*undo-tree Diff*" (buffer-name b))) nil)

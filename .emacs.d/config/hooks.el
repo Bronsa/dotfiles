@@ -103,3 +103,6 @@
                              (setq erc-fill-column (- (window-width w) 2)))))))))
 
 (add-hook 'erc-mode-hook 'erc-add-scroll-to-bottom)
+
+;; (add-hook 'mu4e-compose-mode-hook 'org-mu4e-compose-org-mode)
+(add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)

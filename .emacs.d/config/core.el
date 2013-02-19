@@ -58,6 +58,7 @@
                    'erc
                    'erc-services
                    'eval-sexp-fu
+                   'gnus-dired
                    'haskell-mode
                    'highlight
                    'imenu+
@@ -70,6 +71,7 @@
                    'mu4e
                    'mu4e-utils
                    'nrepl
+                   'org-mu4e
                    'paren
                    'paredit
                    'popup
