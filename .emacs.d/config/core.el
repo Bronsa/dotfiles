@@ -36,7 +36,8 @@
                     "ruby-electric"
                     "slime"
                     "smex"
-                    "undo-tree"))
+                    "undo-tree"
+                    "yasnippet"))
   (add-lib-path path))
 
 ;; Require libs
@@ -82,7 +83,8 @@
                    'smex
                    'tabbar
                    'undo-tree
-                   'xgtags))
+                   'xgtags
+                   'yasnippet))
   (require lib))
 
 ;; Load config files

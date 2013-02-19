@@ -19,3 +19,4 @@
 (show-paren-mode t)
 (global-auto-highlight-symbol-mode t)
 (display-time-mode 1)
+(yas-global-mode 1)
