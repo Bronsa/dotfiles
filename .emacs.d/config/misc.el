@@ -55,7 +55,9 @@
 
  inferior-lisp-program  "lein repl"
 
- default-input-method "TeX")
+ default-input-method "TeX"
+
+ dirtree-windata '(frame left 0.2 delete))
 
 (quietly-read-abbrev-file)
 
