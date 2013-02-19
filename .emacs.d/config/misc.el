@@ -53,7 +53,9 @@
 
  completion-ignore-case t
 
- inferior-lisp-program  "lein repl")
+ inferior-lisp-program  "lein repl"
+
+ default-input-method "TeX")
 
 (quietly-read-abbrev-file)
 
