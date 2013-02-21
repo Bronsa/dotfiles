@@ -57,6 +57,8 @@
 
  default-input-method "TeX"
 
+ scroll-error-top-bottom t
+
  dirtree-windata '(frame left 0.2 delete))
 
 (quietly-read-abbrev-file)
@@ -68,8 +70,6 @@
 
 (slime-setup
  '(slime-scratch slime-fancy slime-repl))
-
-(define-key slime-repl-mode-map (kbd "M-RET") 'slime-repl-newline-and-indent)
 
 (defun indent-file ()
   "indent whole buffer and untabify it"

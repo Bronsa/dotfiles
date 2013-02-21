@@ -51,6 +51,7 @@
 
 ;; Enable autoindentation on RET
 (global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
+(global-set-key (kbd "M-RET") 'newline-and-indent)
 
 ;; Navigate tabs
 (global-set-key (kbd "C-p")     'tabbar-backward-tab)
