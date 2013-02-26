@@ -4,7 +4,7 @@ URxvt.imlocale:               en_EN.UTF-8
 URxvt.perl-ext-common:        default,matcher
 URxvt.underlineURLs:          true
 URxvt.keysym.C-Delete:        perl:matcher
-URxvt.background:             #232323
+URxvt.background:             #262626
 URxvt.foreground:             #ffffff
 URxvt.loginShell:             true
 URxvt.cursorBlink:            true
@@ -37,5 +37,7 @@ URxvt.externalBorder:         0
 URxvt.searchable-scrollback:  CM-s
 URxvt*color4:                 #a9cdeb
 URxvt*color12:                #165eab
+
 URxvt.keysym.C-Return:        \033\015
+URxvt.keysym.C-BackSpace:     \033[33~
 URxvt.font:                   xft:inconsolata:pixelsize=11

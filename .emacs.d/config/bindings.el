@@ -23,6 +23,9 @@
 ;;delete current word
 (global-set-key (kbd "M-W") (lambda () (interactive) (backward-word) (kill-word 1)))
 
+;; C-backspace
+(global-set-key (kbd "S-<f9>") 'backward-kill-word)
+
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
