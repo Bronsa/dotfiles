@@ -83,6 +83,6 @@
 (defalias 'openo 'find-file-other-window)
 
 ;; (add-to-list 'completion-styles 'substring)
-(add-to-list 'completion-styles 'initials)
+;; (add-to-list 'completion-styles 'initials)
 
 (defalias 'byte-compile-cl-warn 'identity)
