@@ -1,3 +1,5 @@
+;; -*- mode: Lisp -*-
+
 (in-package :stumpwm)
 (setf *default-package* :stumpwm)
 
@@ -24,10 +26,10 @@
 (clear-window-placement-rules)
 
 (define-frame-preference "Default1"
-    (0 t t :class "Firefox"))
+    (1 t t :class "Firefox"))
 
-(define-frame-preference "Default0"
-    (1 t t :title "irssi"))
+;; (define-frame-preference "Default0"
+;;     (0 t t :title "irssi"))
 
 (defcommand close-protected-window () ()
             (let ((*deny-quit-request* nil))
@@ -145,16 +147,17 @@
 (define-key *top-map*  (kbd "XF86AudioPlay")       "mpd-toggle-pause")
 (define-key *top-map*  (kbd "XF86AudioStop")       "mpd-stop")
 (define-key *top-map*  (kbd "XF86AudioNext")       "mpd-next")
-(define-key *top-map*  (kbd "XF86AudioLowerVolume")"mpd-volume-down")
+(define-key *top-map*  (kbd "XF86AudioLowerVolume")"vol-down")
 (define-key *top-map*  (kbd "XF86AudioMute")       "vol-toggle")
-(define-key *top-map*  (kbd "XF86AudioRaiseVolume")"mpd-volume-up")
+(define-key *top-map*  (kbd "XF86AudioRaiseVolume")"vol-up")
 
 (when *initializing*
   (banish)
   (run-commands
    "mpd-connect"
    "grename Default0"
-   "exec display -window root /media/old/Pictures/bg6.png"
+   "exec xcompmgr -c &"
+   "exec feh --bg-fill Pictures/1355672973184.jpg"
    "exec urxvtc -title emacs -e emacsclient -c -nw"
    ; "vsplit"
    ; "exec urxvtc"
@@ -163,8 +166,8 @@
    "snext"
    "grename Default1"
    "stumptray"
-   "exec display -window root /media/old/Pictures/bg6.png"
-   "exec urxvtc -title emacs -e emacsclient -c -nw"
+   "exec xcompmgr -c &"
+   "exec fe --bg-fill Pictures/1355673716736.jpg"
    "firefox"
    "exec hp-systray"
    "exec dropboxd"))

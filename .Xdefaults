@@ -5,7 +5,9 @@ URxvt.perl-ext-common:        default,matcher
 URxvt.underlineURLs:          true
 URxvt.keysym.C-Delete:        perl:matcher
 URxvt.background:             #262626
-URxvt.foreground:             #ffffff
+URxvt*.transparent: true
+URxvt*.shading: 20
+URxvt.foreground:             grey80
 URxvt.loginShell:             true
 URxvt.cursorBlink:            true
 URxvt.cursorUnderline:        true
@@ -35,9 +37,24 @@ URxvt.scrollTtyKeypress:      true
 URxvt.internalBorder:         1
 URxvt.externalBorder:         0
 URxvt.searchable-scrollback:  CM-s
-URxvt*color4:                 #a9cdeb
-URxvt*color12:                #165eab
 
 URxvt.keysym.C-Return:        \033\015
 URxvt.keysym.C-BackSpace:     \033[33~
-URxvt.font:                   xft:inconsolata:pixelsize=11
+URxvt.font:                   xft:inconsolata:pixelsize=11, \
+                              xft:Andale Mono:pixelsize=11, \
+                              xft:Verdana:pixelsize=11
+
+! URxvt*font:                            xft:Dejavu Sans Mono:pixelsize=10.5
+! URxvt*boldFont:                        xft:Dejavu Sans Mono:pixelsize=10.5
+URxvt.cutchars:                        ()*,<>[]{}|`""''
+!red
+URxvt*color1:              #FF5E5E
+URxvt*color9:              #FF7878
+
+!white
+URxvt*color7:              #DCDCCC
+URxvt*color15:             #FFFFFF
+!blue
+! URxvt*color4:                 #a9cdeb
+URxvt*color12:                #165eab
+URxvt*color4:              #008AFF

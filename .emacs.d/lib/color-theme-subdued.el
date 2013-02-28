@@ -27,7 +27,7 @@ Based on the Tango color palette."
   (color-theme-install
    '(color-theme-subdued
      ((foreground-color . "#d3d7cf")
-      (background-color . "#232323")
+      ;; (background-color . "#232323")
       (background-mode . dark)
       (cursor-color . "white"))
 
