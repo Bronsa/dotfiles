@@ -133,7 +133,9 @@
  '(erc-prompt-face ((t (:foreground "gray80" :weight bold))))
  '(erc-nick-default-face ((t (:foreground "green"))))
  '(erc-my-nick-face ((t (:foreground "white"))))
- '(erc-current-nick-face ((t (:foreground "yellow")))))
+ '(erc-current-nick-face ((t (:foreground "yellow"))))
+ '(fg:erc-color-face12 ((t (:foreground "brightblue"))))
+ '(fg:erc-color-face2 ((t (:foreground "blue")))))
 
 (set-face-attribute
  'erc-notice-face nil
