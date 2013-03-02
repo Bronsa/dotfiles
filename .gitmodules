@@ -30,7 +30,7 @@
 	url = https://github.com/emacsmirror/highlight.git
 [submodule ".emacs.d/lib/markdown-mode"]
 	path = .emacs.d/lib/markdown-mode
-	url = https://github.com/emacsmirror/markdown-mode.git
+	url = https://github.com/Bronsa/markdown-mode.git
 [submodule ".emacs.d/lib/linum-plus"]
 	path = .emacs.d/lib/linum-plus
 	url = https://github.com/emacsmirror/linum-plus.git
