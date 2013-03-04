@@ -69,7 +69,7 @@
 	url = https://github.com/Golevka/emacs-clang-complete-async.git
 [submodule ".emacs.d/lib/clojure-mode"]
 	path = .emacs.d/lib/clojure-mode
-	url = https://github.com/Bronsa/clojure-mode.git
+	url = https://github.com/technomancy/clojure-mode.git
 [submodule ".emacs.d/lib/slime"]
 	path = .emacs.d/lib/slime
 	url = https://github.com/Bronsa/slime.git
@@ -88,3 +88,6 @@
 [submodule ".emacs.d/lib/yasnippet"]
 	path = .emacs.d/lib/yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
+[submodule ".emacs.d/lib/clojure-mode-hacks"]
+	path = .emacs.d/lib/clojure-mode-hacks
+	url = https://github.com/kriyative/clojure-emacs-hacks.git

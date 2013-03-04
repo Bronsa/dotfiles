@@ -20,6 +20,7 @@
                     "auto-complete-clang-async"
                     "auto-highlight-symbol-mode"
                     "clojure-mode"
+                    "clojure-mode-hacks"
                     "color-theme"
                     "eval-sexp-fu"
                     "haskell-mode"
@@ -51,9 +52,12 @@
                    'auto-complete-config
                    'auto-highlight-symbol
                    'clojure-mode
+                   'clojure-mode-ext
+                   'clojure-mode-slime
+                   'clojure-test-mode
+                   'clojuredocs
                    'color-theme
                    'color-theme-subdued
-                   'clojure-test-mode
                    'd-mode
                    'dircolors
                    'erc
