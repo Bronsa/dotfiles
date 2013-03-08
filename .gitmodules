@@ -53,8 +53,8 @@
 	path = .emacs.d/lib/ac-nrepl
 	url = https://github.com/purcell/ac-nrepl.git
 [submodule ".emacs.d/lib/auto-highlight-symbol-mode"]
-    path = .emacs.d/lib/auto-highlight-symbol-mode
-    url = https://github.com/mitsuo-saito/auto-highlight-symbol-mode.git
+	path = .emacs.d/lib/auto-highlight-symbol-mode
+	url = https://github.com/emacsmirror/auto-highlight-symbol.git
 [submodule ".emacs.d/lib/ac-slime"]
 	path = .emacs.d/lib/ac-slime
 	url = https://github.com/purcell/ac-slime.git
