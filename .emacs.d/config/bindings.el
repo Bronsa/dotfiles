@@ -11,6 +11,11 @@
                 (lambda ()
                   (interactive)
                   (popup-tip (ac-slime-documentation (symbol-at-point-as-string)))))
+;; C-c C-d d slime describe
+;; C-c M-p slime change namsepace
+;; C-c C-z from buffer to repl
+;; C-M-x: complie the whole top-level form
+;; C-c S-i: inspect a value
 
 ;; slime mode shortcuts
 (global-set-key (kbd "C-c s c")     'slime-connect)
@@ -103,6 +108,7 @@
 
 (global-set-key (kbd "C-x l") 'toggle-input-method)
 
-;; C-M-x eval-defun
-;; C-q ( insert unmatched parenthesis
 (global-unset-key (kbd "C-o"))
+
+;; M-spc only a space
+;; C-q ( insert unmatched parenthesis
