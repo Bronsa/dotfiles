@@ -16,7 +16,7 @@
 
 (setq erc-nick "Bronsa"
       erc-user-full-name "Nicola Mometto"
-      erc-email-userid "brobronsa@gmail.com"
+      erc-email-userid "bronco"
 
       erc-nick-uniquifier "`"
       erc-try-new-nick-p t
@@ -34,6 +34,8 @@
       erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "324" "329" "332" "333" "353" "477")
       erc-track-exclude-server-buffer t
       erc-track-showcount t
+
+      erc-query-display 'frame
 
       erc-auto-query 'bury
       erc-kill-buffer-on-part nil

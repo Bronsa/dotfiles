@@ -7,11 +7,11 @@
     ("mehface" "ヽ(´ｰ｀ )ﾉ")
     ("outtahere" "(╯°□°）╯︵ ┻━┻")
     ("dealwithit" "(⌐■_■)")
-    ("novaivia" "⡗⢼⣏⣹⡀⢇⡸⡮⢵⡅ ⢇⡸⡅⡮⢵"))
+    ("novaivia" "⡗⢼⣏⣹⡀⢇⡸⡮⢵⡅ ⢇⡸⡅⡮⢵")))
 
 (define-abbrev-table 'global-abbrev-table
   '(;; ("lmbda" "λ")
-    ;; ("infty" "∞")
+    ;; ("infty" "∞"))
     ("percHé" "perché")
     ("perchè" "perché")
     ("cpaisco" "capisco")

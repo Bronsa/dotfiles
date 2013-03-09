@@ -3,6 +3,7 @@
 
 (setq-default
  font-lock-maximum-decoration t
+ font-lock-maximum-size 1000000
 
  abbrev-mode t
  abbrev-file-name (concat dotfiles-dir "abbrevs")
@@ -37,18 +38,20 @@
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
+
  version-control t
  diff-switches "-u"
 
- undo-tree-history-directory-alist  `(("." . ,(concat dotfiles-tmp-dir "undo")))
- undo-tree-auto-save-history t
- undo-tree-visualizer-diff t
+ ;; undo-tree-history-directory-alist  `(("." . ,(concat dotfiles-tmp-dir "undo")))
+ ;; undo-tree-auto-save-history t
+ ;; undo-tree-visualizer-diff t
 
  slime-protocol-version 'ignore
  slime-net-coding-system 'utf-8-unix
 
  linum-disabled-modes-list '(erc-mode compilation-mode dired-mode mpc-mode mpc-status-mode
-                                      mpc-tagbrowser-mode mpc-tagbrowser-dir-mode mpc-songs-mode)
+                                      mpc-tagbrowser-mode mpc-tagbrowser-dir-mode mpc-songs-mode
+                                      mu4e-headers-mode mu4e-main-mode mu4e-view-mode)
  linum-disable-starred-buffers nil
 
  completion-ignore-case t
