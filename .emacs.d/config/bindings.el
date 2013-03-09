@@ -5,8 +5,12 @@
 (global-set-key (kbd "C-M-f")     'paredit-forward)
 (global-set-key (kbd "C-M-b")     'paredit-backward)
 
-;;C-c C-? bindings
+;; should actually be clojure specific
 (global-set-key (kbd "C-c C-e")   'slime-eval-last-expression)
+(global-set-key (kbd "C-h")
+                (lambda ()
+                  (interactive)
+                  (popup-tip (ac-slime-documentation (symbol-at-point-as-string)))))
 
 ;; slime mode shortcuts
 (global-set-key (kbd "C-c s c")     'slime-connect)
