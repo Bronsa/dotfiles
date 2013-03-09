@@ -101,3 +101,4 @@
 
 ;; C-M-x eval-defun
 ;; C-q ( insert unmatched parenthesis
+(global-unset-key (kbd "C-o"))
