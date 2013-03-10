@@ -110,5 +110,7 @@
 
 (global-unset-key (kbd "C-o"))
 
+(define-key mu4e-headers-mode-map 'mu4e-compose-reply)
+
 ;; M-spc only a space
 ;; C-q ( insert unmatched parenthesis

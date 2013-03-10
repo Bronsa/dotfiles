@@ -26,6 +26,7 @@
       mu4e-get-mail-command "offlineimap"
       mu4e-maildir "~/.mail"
       mu4e-headers-leave-behavior 'apply
+
       mu4e-show-images nil
 
       ;; we do this with an external timer so it runs even when mu4e is not already started
@@ -63,7 +64,7 @@
 
       message-kill-buffer-on-exit t
 
-      mu4e-html2text-command "html2text")
+      mu4e-html2text-command "html2text -width 80")
 
 (defvar total-mail 0)
 (defvar new-mail 0)
@@ -102,3 +103,11 @@
     (nreverse buffers)))
 
 (setq gnus-dired-mail-mode 'mu4e-user-agent)
+
+;; don't move to the next message
+(defun mu4e-headers-mark-and-next (mark)
+  "Set mark MARK on the message at point or on all messages in the
+region if there is a region"
+  (interactive)
+  (mu4e-mark-set mark)
+  (forward-line))
