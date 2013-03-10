@@ -48,6 +48,8 @@
 
  tags-table-list '("~/.emacs.d")
 
+ yas-snippet-dirs '("~/.emacs.d/snippets")
+
  slime-protocol-version 'ignore
  slime-net-coding-system 'utf-8-unix
 
