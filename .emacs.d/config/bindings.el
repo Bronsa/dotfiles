@@ -19,6 +19,21 @@
 
 ;; slime mode shortcuts
 (global-set-key (kbd "C-c s c")     'slime-connect)
+(global-set-key (kbd "C-c s d")     (lambda () (interactive)
+                                      (if (locate-dominating-file default-directory "project.clj")
+                                          (clojrue-jack-in)
+                                        (progn
+                                          (when (get-buffer "*swank*")
+                                            (kill-buffer "*swank*"))
+                                          (let* ((proc (start-process-shell-command "swank" "*swank*" "lein swank")))
+                                            (set-process-filter (get-buffer-process "*swank*")
+                                                                (lambda (process output)
+                                                                  (with-current-buffer "*swank*"
+                                                                    (insert output))
+                                                                  (when (string-match "Connection opened on localhost port 4005." output)
+                                                                    (slime-connect "localhost" 4005)
+                                                                    (set-process-filter process nil)))))
+                                          (message "Starting swank server...")))))
 
 (global-set-key (kbd "C-c s e d")   'slime-eval-defun)
 (global-set-key (kbd "C-c s e m")   'slime-eval-macroexpand-inplace)
