@@ -57,6 +57,7 @@
                                 (equal "*Backtrace*" (buffer-name b))
                                 (equal "*Quail Completions*" (buffer-name b))
                                 (equal "*trace of SMTP session to smtp.gmail.com*" (buffer-name b))
+                                (equal "TAGS" (buffer-name b))
                                 (memq (buffer-local-value 'major-mode b)
                                       '(mu4e-main-mode mu4e-view-mode mu4e-compose-mode mu4e-headers-mode message-mode mail-mode))
                                 (string-match "\\*draft\\*.*" (buffer-name b))

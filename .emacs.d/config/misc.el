@@ -46,6 +46,8 @@
  ;; undo-tree-auto-save-history t
  ;; undo-tree-visualizer-diff t
 
+ tags-table-list '("~/.emacs.d")
+
  slime-protocol-version 'ignore
  slime-net-coding-system 'utf-8-unix
 
