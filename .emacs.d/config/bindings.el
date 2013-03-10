@@ -21,7 +21,7 @@
 (global-set-key (kbd "C-c s c")     'slime-connect)
 (global-set-key (kbd "C-c s d")     (lambda () (interactive)
                                       (if (locate-dominating-file default-directory "project.clj")
-                                          (clojrue-jack-in)
+                                          (clojure-jack-in)
                                         (progn
                                           (when (get-buffer "*swank*")
                                             (kill-buffer "*swank*"))
