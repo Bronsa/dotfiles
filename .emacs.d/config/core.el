@@ -22,6 +22,7 @@
                     "clojure-mode"
                     "clojure-mode-hacks"
                     "color-theme"
+                    "emacs-async"
                     "eval-sexp-fu"
                     "haskell-mode"
                     "highlight"
@@ -83,6 +84,7 @@
                    'ps-print
                    'ruby-electric
                    'saveplace
+                   'smtpmail-async
                    'slime
                    'smex
                    'tabbar

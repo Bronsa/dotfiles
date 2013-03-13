@@ -50,6 +50,7 @@
 
       mu4e-headers-show-threads nil
 
+      message-send-mail-function 'async-smtpmail-send-it
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
 
       smtpmail-auth-credentials '(("smtp.gmail.com" 587 "brobronsa@gmail.com" nil))
@@ -64,7 +65,7 @@
 
       message-kill-buffer-on-exit t
 
-      mu4e-html2text-command "html2text -width 80")
+      mu4e-html2text-command "html2text -nobs -width 80")
 
 (defvar total-mail 0)
 (defvar new-mail 0)

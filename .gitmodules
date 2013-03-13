@@ -91,3 +91,6 @@
 [submodule ".emacs.d/lib/clojure-mode-hacks"]
 	path = .emacs.d/lib/clojure-mode-hacks
 	url = https://github.com/kriyative/clojure-emacs-hacks.git
+[submodule ".emacs.d/lib/emacs-async"]
+	path = .emacs.d/lib/emacs-async
+	url = https://github.com/jwiegley/emacs-async.git
