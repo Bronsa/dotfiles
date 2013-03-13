@@ -1,3 +1,6 @@
 [submodule ".zoppo"]
 	path = .zoppo
 	url = https://github.com/zoppo/zoppo.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = https://github.com/Bronsa/.emacs.d.git
