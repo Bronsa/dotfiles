@@ -1,12 +1,13 @@
 URxvt.termName:               rxvt-256color
+URxvt.iso14755:               false
 URxvt.preeditType:            OverTheSpot
 URxvt.imlocale:               en_EN.UTF-8
 URxvt.perl-ext-common:        default,matcher
 URxvt.underlineURLs:          true
 URxvt.keysym.C-Delete:        perl:matcher
 URxvt.background:             #262626
-URxvt*.transparent:           true
-URxvt*.shading:               21
+URxvt.transparent:            true
+URxvt.shading:                21
 URxvt.foreground:             grey80
 URxvt.loginShell:             true
 URxvt.cursorBlink:            true
@@ -40,7 +41,7 @@ URxvt.searchable-scrollback:  CM-s
 
 URxvt.keysym.C-Return:        \033\015
 URxvt.keysym.C-BackSpace:     \033[33~
-URxvt.font:                   xft:DejaVu Sans Mono-9
+URxvt.font:                   xft:DejaVu Sans Mono-9:VL Gothic-7:
 
 URxvt.cutchars:               ()*,<>[]{}|`""''
 
@@ -52,4 +53,4 @@ URxvt*color4:                 #008AFF
 
 XTerm*Background: black
 XTerm*Foreground: white
-XTerm*faceName:   DejaVu Sans Mono-9
+XTerm*faceName:   DejaVu Sans Mono-40
