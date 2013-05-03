@@ -41,7 +41,8 @@ URxvt.searchable-scrollback:  CM-s
 
 URxvt.keysym.C-Return:        \033\015
 URxvt.keysym.C-BackSpace:     \033[33~
-URxvt.font:                   xft:DejaVu Sans Mono-9:VL Gothic-7:
+URxvt.font:                   xft:DejaVu Sans Mono-9, \
+                              xft:VL Gothic-7
 
 URxvt.cutchars:               ()*,<>[]{}|`""''
 
