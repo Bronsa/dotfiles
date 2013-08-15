@@ -22,7 +22,7 @@ fi;
 export LS_OPTIONS="--color=auto"
 export EDITOR="emacsclient -c -nw"
 export ALTERNATE_EDITOR=""
-export PATH=.:$HOME/.lein/bin:$HOME/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH
+export PATH=.:$HOME/.lein/bin:$HOME/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export BROWSER=firefox
@@ -40,9 +40,7 @@ alias emacs='emacsclient -c -nw'
 # alias xemacs='emacsclient -c -n -e "(set-mouse-color \"white\")"'
 export BREAK_CHARS="\"#'(),;\`\\|!?[]{}"
 # alias java=drip
-alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -server -XX:+TieredCompilation -Xbootclasspath/a:/home/bronsa/src/clojure/target/clojure-1.5.0-master-SNAPSHOT.jar clojure.main"
-# alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -a,, -p'8;31' -f /home/bronsa/.clj_completions -r java -XX:+TieredCompilation  -server -cp /home/bronsa/src/clojure/target/clojure-1.5.0-master-SNAPSHOT.jar clojure.main"
-#alias clj-prj="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -XX:+TieredCompilation -cp `for i in /home/bronsa/.dummy-clj-prj/lib/*.jar ; do echo -n $i: ; done` clojure.main"
+alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -Xshare:on -server -XX:+AggressiveOpts -XX:+TieredCompilation -Xbootclasspath/a:/home/bronsa/src/clojure/target/clojure-1.6.0-master-SNAPSHOT.jar clojure.main"
 alias cljs="rlwrap -b \$BREAK_CHARS /home/bronsa/src/clojurescript/script/repljs"
 alias cljsc="$HOME/src/clojurescript/bin/cljsc"
 alias gchi=ghci
@@ -50,6 +48,10 @@ alias l=ls
 alias s=ls
 alias sls=ls
 alias sl=ls
+alias d=cd
+alias e=emacs
+alias c=cd
+alias k=killall
 alias gcc='gcc -Wall -Wextra -std=c99 -pedantic -pedantic-errors '
 alias halt="halt -p"
 alias download="aria2c -c -s 100 --file-allocation=none --summary-interval=0"
@@ -59,8 +61,11 @@ alias freecache='sync; echo 3 > /proc/sys/vm/drop_caches'
 alias printer="lp"
 alias mp3towav="for i in *.mp3; do mplayer -ao pcm:file=\"\${i%\.mp3}.wav\" \"\$i\"; done"
 alias sscreenshot='scrot -s -d 3 screenshot.png; imageshack screenshot.png; rm screenshot.png'
+alias screenshot='scrot -d 3 screenshot.png; imageshack screenshot.png; rm screenshot.png'
 alias clj=clj-head
 alias aria=aria2c -j16 -s16 -c --file-allocation=none -m0 --max-connection-per-server=16 --min-split-size=5M --summary-interval=60 -t5
+alias mplayer=mpv
+alias myip="curl -s http://checkip.dyndns.org/ | grep --color=no -Po '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
 all2wav () {
     : ${1?"USAGE: all2wav <file.ext> [outfile]"}
     local OUTFILE="${2}"
@@ -75,3 +80,11 @@ all2mp3 () {
     lame audiodump.wav "${OUTFILE}"
     rm audiodump.wav
 }
+
+for keycode in '[' '0'; do
+    bindkey "^[${keycode}A" history-substring-search-up
+    bindkey "^[${keycode}B" history-substring-search-down
+done
+
+alias mountprivate="mount -t ecryptfs /media/private/.p /media/private/p"
+alias nopaste=sprunge
