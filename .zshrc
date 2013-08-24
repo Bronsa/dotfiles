@@ -88,3 +88,4 @@ done
 
 alias mountprivate="mount -t ecryptfs /media/private/.p /media/private/p"
 alias nopaste=sprunge
+alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
