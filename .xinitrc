@@ -7,8 +7,9 @@ setxkbmap gb
 urxvtd &
 mpd
 mpdscribble &
-syndaemon -t -k -i 2 -d &
+syndaemon -k -i 0.5 -d
 xscreensaver -no-splash &
 redshift -o -l 0:0 -b 0.8 -t 6500:6500
 xinput --map-to-output 12 LVDS1
+xcape -e "Shift_L=parenleft;Shift_R=parenright"
 exec src/stumpwm/stumpwm &> .log
