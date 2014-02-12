@@ -1,0 +1,3 @@
+xscreensaver.logFile:/var/log/xscreensaver.log
+xscreensaver.verbose:true
+URxvt.perl-ext-common: ...,font-size

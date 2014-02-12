@@ -7,7 +7,7 @@ URxvt.underlineURLs:          true
 URxvt.keysym.C-Delete:        perl:matcher
 URxvt.background:             #262626
 URxvt.transparent:            true
-URxvt.shading:                21
+URxvt.shading:                100
 URxvt.foreground:             grey80
 URxvt.loginShell:             true
 URxvt.cursorBlink:            true
@@ -38,11 +38,17 @@ URxvt.scrollTtyKeypress:      true
 URxvt.internalBorder:         1
 URxvt.externalBorder:         0
 URxvt.searchable-scrollback:  CM-s
-
 URxvt.keysym.C-Return:        \033\015
 URxvt.keysym.C-BackSpace:     \033[33~
-URxvt.font:                   xft:DejaVu Sans Mono-8, \
+URxvt.font:                   xft:DejaVu Sans Mono-7.5, \
                               xft:VL Gothic-7
+
+URxvt.keysym.CM-Up:     perl:font-size:increase
+URxvt.keysym.CM-Down:   perl:font-size:decrease
+! URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+! URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+
 
 URxvt.cutchars:               ()*,<>[]{}|`""''
 
@@ -55,3 +61,5 @@ URxvt*color4:                 #008AFF
 XTerm*Background: black
 XTerm*Foreground: white
 XTerm*faceName:   DejaVu Sans Mono-40
+
+emacsclient.font:       DejaVu Sans Mono-7.9
