@@ -2,7 +2,7 @@ URxvt.termName:               rxvt-256color
 URxvt.iso14755:               false
 URxvt.preeditType:            OverTheSpot
 URxvt.imlocale:               en_EN.UTF-8
-URxvt.perl-ext-common:        default,matcher
+URxvt.perl-ext-common:        default,matcher,font-size
 URxvt.underlineURLs:          true
 URxvt.keysym.C-Delete:        perl:matcher
 URxvt.background:             #262626
@@ -40,6 +40,10 @@ URxvt.externalBorder:         0
 URxvt.searchable-scrollback:  CM-s
 URxvt.keysym.C-Return:        \033\015
 URxvt.keysym.C-BackSpace:     \033[33~
+URxvt.keysym.M-Down:          \033[1;3B
+URxvt.keysym.M-Up:            \033[1;3A
+URxvt.keysym.M-Left:          \033[1;3D
+URxvt.keysym.M-Right:         \033[1;3C
 URxvt.font:                   xft:DejaVu Sans Mono-7.5, \
                               xft:VL Gothic-7
 
@@ -49,14 +53,12 @@ URxvt.keysym.CM-Down:   perl:font-size:decrease
 ! URxvt.keysym.C-S-Down: perl:font-size:decglobal
 
 
-
 URxvt.cutchars:               ()*,<>[]{}|`""''
 
 URxvt*color1:                 #FF5E5E
 URxvt*color9:                 #FF7878
 URxvt*color12:                #165eab
 URxvt*color4:                 #008AFF
-
 
 XTerm*Background: black
 XTerm*Foreground: white

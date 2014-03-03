@@ -2,7 +2,6 @@ killall urxvtd
 killall mpd
 killall mpdscribble
 
-xrdb -merge ~/.Xresources
 xset -b
 setxkbmap gb
 urxvtd &
