@@ -1,4 +1,4 @@
-export TERM="xterm-256color"
+export TERM="rxvt-unicode-256color"
 
 # azzoppati {{{
 [ -s "${ZDOTDIR:-$HOME}/.zoppo/zoppo.zsh" ] && source "${ZDOTDIR:-$HOME}/.zoppo/zoppo.zsh"
@@ -23,6 +23,7 @@ export LS_OPTIONS="--color=auto"
 export EDITOR="emacsclient -c -nw"
 export ALTERNATE_EDITOR=""
 export PATH=.:$HOME/.lein/bin:$HOME/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
+export CL_SOURCE_REGISTRY=/home/bronsa/src/stumpwm/ #:$CL_SOURCE_REGISTRY
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export BROWSER=firefox
@@ -64,6 +65,7 @@ alias sscreenshot='scrot -s -d 3 screenshot.png; imageshack screenshot.png; rm s
 alias screenshot='scrot -d 3 screenshot.png; imageshack screenshot.png; rm screenshot.png'
 alias clj=clj-head
 alias aria=aria2c -j16 -s16 -c --file-allocation=none -m0 --max-connection-per-server=16 --min-split-size=5M --summary-interval=60 -t5
+alias mpv="mpv --heartbeat-cmd=\"xscreensaver-command -deactivate\""
 alias mplayer=mpv
 alias myip="curl -s http://checkip.dyndns.org/ | grep --color=no -Po '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
 all2wav () {
