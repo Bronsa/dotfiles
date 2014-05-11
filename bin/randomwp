@@ -1,0 +1,6 @@
+#!/bin/sh
+while true;
+do
+    feh --bg-fill "$HOME/Images/wallpaper/$(ls ~/Images/wallpaper | sort -R | head -n1)"
+    sleep 5m
+done
