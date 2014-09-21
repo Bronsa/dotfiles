@@ -3,8 +3,14 @@
 (in-package :stumpwm)
 (setf *default-package* :stumpwm)
 
+
+(set-contrib-dir "/home/bronsa/src/stumpwm/contrib")
+
 (when *initializing*
-  (mapcar #'load-module '("stumptray" "mpd" "battery-portable" "cpu" "screenshot" "wifi")))
+  (mapcar #'load-module '(;"stumptray"
+                          "mpd" "battery-portable" "cpu" "wifi"
+                          ;;"net"
+                          )))
 
 (set-prefix-key (kbd "C-f"))
 (set-fg-color "Gray")
@@ -39,10 +45,10 @@
             (focus-prev-frame (current-group)))
 
 (defcommand vol-down () ()
-            (run-shell-command "amixer set Master playback 1-"))
+            (run-shell-command "amixer set Master playback 4-"))
 
 (defcommand vol-up () ()
-            (run-shell-command "amixer set Master playback 1+"))
+            (run-shell-command "amixer set Master playback 4+"))
 
 (defcommand vol-toggle () ()
             (run-shell-command "amixer set Master toggle"))
@@ -91,7 +97,7 @@
  *mode-line-background-color*   "black"
  *mode-line-foreground-color*   "grey"
  *mode-line-timeout*            1
- *mode-line-highlight-format*   "^09~a^n"
+ *mode-line-highlight-template* "^09~a^n"
  *mode-line-position*           :bottom
  ;; *tray-viwin-background*        "black"
  ;; *tray-hiwin-background*        "black"
@@ -107,7 +113,7 @@
       (list
        "^90[^n%d^90] [^n%B^90] [^n%c %f %t^90] [^nWIFI: %I^90] [^n%m^90] ^n"
        '(:eval (format nil "~c" #\Newline))
-       "^90[^n%g^90]^n "
+       "^90[^n%g^90]^n"
        '(:eval (format nil "~:[^90 [^n%w^90]^n~;~]"
                 (equal "" (fmt-window-list (head-mode-line (current-head))))))))
 
@@ -120,6 +126,8 @@
 
 (undefine-key *root-map* (kbd "C-k"))
 (undefine-key *root-map* (kbd "c"))
+(undefine-key *root-map* (kbd "C-e"))
+(undefine-key *root-map* (kbd "e"))
 ;; (undefine-key *root-map* (kbd "C-f"))
 ;; (undefine-key *root-map* (kbd "C-p"))
 ;; (undefine-key *root-map* (kbd "C-n"))
@@ -140,12 +148,13 @@
 (define-key *root-map* (kbd "M-x")                 "colon")
 (define-key *root-map* (kbd "y")                   "mark")
 (define-key *root-map* (kbd "C-o")                 "gother")
+(define-key *root-map* (kbd "O")                   "fprev")
 (define-key *root-map* (kbd "C-s")                 "vsplit")
 (define-key *root-map* (kbd "F")                   "gnew-float")
 (define-key *top-map*  (kbd "M-TAB")               "snext")
 (define-key *top-map*  (kbd "C-M-DEL")             "quit")
 (define-key *top-map*  (kbd "C-2")                 "firefox")
-(define-key *top-map*  (kbd "C-1")                 "exec dbus-launch thunar")
+(define-key *top-map*  (kbd "C-1")                 "exec thunar")
 (define-key *top-map*  (kbd "XF86AudioPrev")       "mpd-prev")
 (define-key *top-map*  (kbd "XF86AudioPlay")       "mpd-toggle-pause")
 (define-key *top-map*  (kbd "XF86AudioStop")       "mpd-stop")
@@ -153,7 +162,7 @@
 (define-key *top-map*  (kbd "XF86AudioLowerVolume")"vol-down")
 (define-key *top-map*  (kbd "XF86AudioMute")       "vol-toggle")
 (define-key *top-map*  (kbd "XF86AudioRaiseVolume")"vol-up")
-
+(define-key *top-map*  (kbd "XF86TouchpadToggle")  "exec xscreensaver-command -lock")
 (when *initializing*
   (banish)
   (run-commands
@@ -167,14 +176,14 @@
                                         ; "vsplit"
                                         ; "exec urxvtc"
                                         ; "irssi"
-   "stumptray"
+   ;; "stumptray"
    ;;"snext"
   ;; "grename Default1"
    ;; "exec xcompmgr -c &"
   ;; "exec feh --bg-fill Pictures/1368379018700.jpg"
    "firefox"
-   ;;"exec hp-systray"
-;;   "exec dropboxd"
+   ;;"exec hp-systray &"
+   "exec dropboxd"
 ))
 
 ;; ;; force redisplay
