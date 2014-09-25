@@ -1,2 +1,6 @@
 #!/bin/sh
-feh --bg-fill "$HOME/Images/wallpaper/$(ls ~/Images/wallpaper | sort -R | head -n1)"
+
+export DISPLAY=:0.0
+export XAUTHORITY=/home/bronsa/.Xauthority
+export HOME=/home/bronsa/
+feh --bg-fill --randomize ~/Images/wallpaper/*

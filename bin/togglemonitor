@@ -7,4 +7,4 @@ else
     xrandr --output VGA1 --off;
 fi
 
-randomwp
+/home/bronsa/bin/randomwp
