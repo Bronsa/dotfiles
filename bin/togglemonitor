@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if echo "$(xrandr | grep VGA1)" | grep -q "connected ("
+then
+    xrandr --output LVDS1 --auto --primary --pos 117x900 --output VGA1 --auto --pos 0x0;
+else
+    xrandr --output VGA1 --off;
+fi
+
+randomwp
