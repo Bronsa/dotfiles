@@ -8,9 +8,7 @@
 
 (when *initializing*
   (mapcar #'load-module '(;"stumptray"
-                          "mpd" "battery-portable" "cpu" "wifi"
-                          ;;"net"
-                          )))
+                          "mpd" "battery-portable" "cpu" "wifi" "net")))
 
 (set-prefix-key (kbd "C-f"))
 (set-fg-color "Gray")
@@ -111,11 +109,9 @@
         *screen-list*)
 (setf *screen-mode-line-format*
       (list
-       "^90[^n%d^90] [^n%B^90] [^n%c %f %t^90] [^nWIFI: %I^90] [^n%m^90] ^n"
+       "^90[^n%d^90] [^n%B^90] [^n%c %f %t^90] [^nWIFI: %I%l^90] [^n%m^90] ^n"
        '(:eval (format nil "~c" #\Newline))
-       "^90[^n%g^90]^n"
-       '(:eval (format nil "~:[^90 [^n%w^90]^n~;~]"
-                (equal "" (fmt-window-list (head-mode-line (current-head))))))))
+       "^90[^n%g^90][^n%w^90]^n"))
 
 (if (not (head-mode-line (current-head)))
     (mapcar (lambda (s)
@@ -147,10 +143,11 @@
 (define-key *root-map* (kbd "c")                   "exec urxvtc")
 (define-key *root-map* (kbd "M-x")                 "colon")
 (define-key *root-map* (kbd "y")                   "mark")
-(define-key *root-map* (kbd "C-o")                 "gother")
+(define-key *root-map* (kbd "C-o")                 "hother")
 (define-key *root-map* (kbd "O")                   "fprev")
 (define-key *root-map* (kbd "C-s")                 "vsplit")
 (define-key *root-map* (kbd "F")                   "gnew-float")
+(define-key *root-map* (kbd "m")                   "exec togglemonitor")
 (define-key *top-map*  (kbd "M-TAB")               "snext")
 (define-key *top-map*  (kbd "C-M-DEL")             "quit")
 (define-key *top-map*  (kbd "C-2")                 "firefox")
@@ -183,8 +180,7 @@
   ;; "exec feh --bg-fill Pictures/1368379018700.jpg"
    "firefox"
    ;;"exec hp-systray &"
-   "exec dropboxd"
-))
+   "exec dropboxd"))
 
 ;; ;; force redisplay
 ;; (add-hook *focus-window-hook*
