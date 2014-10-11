@@ -5,8 +5,8 @@ killall mpdas
 xset -b
 setxkbmap gb
 urxvtd &
-# mpd
-# mpdas -c .mpdasrc -d
+mpd
+mpdas -c .mpdasrc -d
 # syndaemon -k -i 0.5 -d
 xscreensaver -no-splash &
 # redshift-gtk &

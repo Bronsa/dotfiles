@@ -7,8 +7,7 @@
 (set-contrib-dir "/home/bronsa/src/stumpwm/contrib")
 
 (when *initializing*
-  (mapcar #'load-module '(;"stumptray"
-                          "mpd" "battery-portable" "cpu" "wifi" "net")))
+  (mapcar #'load-module '("stumptray" "mpd" "battery-portable" "cpu" "wifi" "net")))
 
 (set-prefix-key (kbd "C-f"))
 (set-fg-color "Gray")
@@ -23,14 +22,6 @@
 (defcommand firefox () ()
             "run firefox"
             (run-or-raise "firefox" '(:class "Firefox")))
-
-(clear-window-placement-rules)
-
-;; (define-frame-preference "Firefox"
-;;     (0 t t :class "Firefox"))
-
-;; (define-frame-preference "Default0"
-;;     (0 t t :title "irssi"))
 
 (defcommand close-protected-window () ()
             (let ((*deny-quit-request* nil))
@@ -129,14 +120,9 @@
 ;; (undefine-key *root-map* (kbd "C-n"))
 
 (define-key *root-map* (kbd "C-f")                 "meta C-f")
-;; (define-key *root-map* (kbd "e")                   "run-shell-command urxvtc -title emacs -e emacsclient -c -nw")
-;; (define-key *root-map* (kbd "N")                     '*notification-map*)
 (define-key *root-map* (kbd "C-k")                 "close-protected-window")
 (define-key *root-map* (kbd "L")                   "loadrc")
 (define-key *root-map* (kbd "C-l")                 "reload")
-;; (define-key *root-map* (kbd "C-o")                   "snext")
-;; (define-key *root-map* (kbd "C-n")                   "snext")
-;; (define-key *root-map* (kbd "C-p")                   "sprev")
 (define-key *root-map* (kbd "TAB")                 "fnext")
 (define-key *root-map* (kbd "ISO_Left_Tab")        "fprev")
 (define-key *root-map* (kbd "RET")                 "fullscreen")
@@ -148,6 +134,7 @@
 (define-key *root-map* (kbd "C-s")                 "vsplit")
 (define-key *root-map* (kbd "F")                   "gnew-float")
 (define-key *root-map* (kbd "m")                   "exec togglemonitor")
+(define-key *root-map* (kbd "M")                   "exec playrandom")
 (define-key *top-map*  (kbd "M-TAB")               "snext")
 (define-key *top-map*  (kbd "C-M-DEL")             "quit")
 (define-key *top-map*  (kbd "C-2")                 "firefox")
@@ -160,39 +147,11 @@
 (define-key *top-map*  (kbd "XF86AudioMute")       "vol-toggle")
 (define-key *top-map*  (kbd "XF86AudioRaiseVolume")"vol-up")
 (define-key *top-map*  (kbd "XF86TouchpadToggle")  "exec xscreensaver-command -lock")
+
 (when *initializing*
   (banish)
   (run-commands
    "mpd-connect"
-   ;; "gnew Firefox"
-
-   ;;"grename Default0"
-   ;; "exec xcompmgr -c &"
-   ;;"exec feh --bg-fill Pictures/1368379267406.jpg"
-   ;;"exec urxvtc -title emacs -e emacsclient -c -nw"
-                                        ; "vsplit"
-                                        ; "exec urxvtc"
-                                        ; "irssi"
-   ;; "stumptray"
-   ;;"snext"
-  ;; "grename Default1"
-   ;; "exec xcompmgr -c &"
-  ;; "exec feh --bg-fill Pictures/1368379018700.jpg"
+   "stumptray"
    "firefox"
-   ;;"exec hp-systray &"
    "exec dropboxd"))
-
-;; ;; force redisplay
-;; (add-hook *focus-window-hook*
-;;           (lambda (window _)
-;;             (with-slots (width height frame) window
-;;               (set-window-geometry window
-;;                                    :width (+ width
-;;                                              (* (window-width-inc window)
-;;                                                 (floor (- (frame-width frame) width)
-;;                                                        (window-width-inc window))))
-;;                                    :height (+ height
-;;                                               (* (window-height-inc window)
-;;                                                  (floor (- (frame-height frame) height)
-;;                                                         (window-height-inc window)))))
-;;               (maximize-window window))))
