@@ -1,5 +1,6 @@
 export TERM="rxvt-unicode-256color"
 
+unset GREP_OPTIONS
 # azzoppati {{{
 [ -s "${ZDOTDIR:-$HOME}/.zoppo/zoppo.zsh" ] && source "${ZDOTDIR:-$HOME}/.zoppo/zoppo.zsh"
 # }}}
@@ -13,12 +14,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:halt:reboot"
 HISTFILE=~/.histfile
 
-if (( UID != 0 )); then
-    export PS1=$'%{\e[0;34m%}[%{\e[0;36m%}%~%{\e[0;34m%}] %{\e[00m%}~ '
-else
-    export PS1=$'%{\e[0;31m%}[%{\e[0;35m%}%~%{\e[0;31m%}] %{\e[00m%}# '
-fi;
-
+export DISPLAY=:0.0
+export XAUTHORITY=/home/bronsa/.Xauthority
 export LS_OPTIONS="--color=auto"
 export EDITOR="emacsclient -c -nw"
 export ALTERNATE_EDITOR=""
@@ -41,7 +38,9 @@ alias emacs='emacsclient -c -nw'
 # alias xemacs='emacsclient -c -n -e "(set-mouse-color \"white\")"'
 export BREAK_CHARS="\"#'(),;\`\\|!?[]{}"
 # alias java=drip
-alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -Xshare:on -server -XX:+AggressiveOpts -XX:+TieredCompilation -Xbootclasspath/a:/home/bronsa/src/clojure/target/clojure-1.6.0-master-SNAPSHOT.jar clojure.main"
+#alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java $JAVA_OPTS -cp .:/home/bronsa/src/clojure/target/clojure-1.7.0-master-SNAPSHOT.jar -server -XX:+AggressiveOpts -XX:+TieredCompilation clojure.main"
+alias build-clj="sudo su -c 'java -Xshare:dump -Xbootclasspath/a:/home/bronsa/src/clojure/target/clojure-1.7.0-master-SNAPSHOT.jar clojure.main'"
+alias clj-head="rlwrap -b \$BREAK_CHARS -c -i -f /home/bronsa/.clj_completions -r java -Xshare:on -server -Xverify:none -XX:+AggressiveOpts -XX:+TieredCompilation -Xbootclasspath/a:/home/bronsa/src/clojure/target/clojure-1.7.0-master-SNAPSHOT.jar -cp .:./classes clojure.main"
 alias cljs="rlwrap -b \$BREAK_CHARS /home/bronsa/src/clojurescript/script/repljs"
 alias cljsc="$HOME/src/clojurescript/bin/cljsc"
 alias gchi=ghci
@@ -68,6 +67,7 @@ alias aria=aria2c -j16 -s16 -c --file-allocation=none -m0 --max-connection-per-s
 alias mpv="mpv --heartbeat-cmd=\"xscreensaver-command -deactivate\""
 alias mplayer=mpv
 alias myip="curl -s http://checkip.dyndns.org/ | grep --color=no -Po '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
+alias music='echo "http://$(myip):8000"'
 all2wav () {
     : ${1?"USAGE: all2wav <file.ext> [outfile]"}
     local OUTFILE="${2}"
@@ -91,3 +91,13 @@ done
 alias mountprivate="mount -t ecryptfs /media/private/.p /media/private/p"
 alias nopaste=sprunge
 alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+alias g++='g++ -Wall -Wextra -ansi -pedantic -pedantic-errors -O2 -march=native -pipe'
+
+# bindkey "\e^[[C" forward-word
+# bindkey "\e^[[D" backward-word
+alias fan='while true; do i8kctl fan - 2 &> /dev/null; sleep 0.2; done'
+alias minfan='while true; do i8kctl fan - 1 &> /dev/null; sleep 0.2; done'
+mpv-headless() {
+    mpv --no-terminal --force-window -- "$1" &;
+    exit
+}
