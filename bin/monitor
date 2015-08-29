@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$1" = "on" ];
+then
+    xrandr --output LVDS1 --auto --primary --output VGA1 --auto --above LVDS1;
+else
+    xrandr --output VGA1 --off;
+fi
+
+randomwp
