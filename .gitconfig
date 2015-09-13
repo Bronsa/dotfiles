@@ -1,7 +1,12 @@
 [user]
-	name = Bronsa
-	email = brobronsa@gmail.com
+    name = Nicola Mometto
+    email = brobronsa@gmail.com
 [core]
-	editor = emacsclient -c -nw
+    editor = emacsclient -c -nw
+	attributesfile = /home/bronsa/.config/git/gitattributes
 [push]
-	default = matching
+    default = simple
+[diff "clojure"]
+	xfuncname = (^\\(.*|\\s*\\(defn.*)
+[alias]
+    g = grep --break --heading --line-number
