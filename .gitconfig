@@ -4,6 +4,7 @@
 [core]
     editor = emacsclient -c -nw
 	attributesfile = /home/bronsa/.config/git/gitattributes
+	excludesfile = /home/bronsa/.gitignore
 [push]
     default = simple
 [diff "clojure"]

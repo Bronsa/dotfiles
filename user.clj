@@ -13,3 +13,6 @@
 
 (defmethod print-method Throwable [^Throwable o ^Writer w]
   (print-object o w))
+
+(defmethod print-method Object [o ^Writer w]
+  (print-object o w))
