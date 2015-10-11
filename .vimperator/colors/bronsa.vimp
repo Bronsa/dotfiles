@@ -1,0 +1,45 @@
+hi Enabled  color: darkgreen; background: black;
+hi Disabled color: grey; background: black;
+
+hi Title    color: white; background: #202020;
+hi Normal   color: white; background: black;
+
+hi Help         color: white; background: black;
+hi HelpArg      color: grey;
+hi -a HelpHead  color: #202020;
+hi -a HelpEx    color: #202020 !important;
+hi -a HelpLink  color: grey;
+
+hi CompTitle            color: #202020; background: black;
+hi CompDesc             color: gray;    background: black;
+hi CompGroup            color: grey;     background: black;
+hi CompItem             color: white;   background: black;
+hi CompItem[selected]   color: white;   background: #202020;
+hi CompIcon             color: white;   background: black;
+hi CompTitle>*          color: white;   background: black;
+
+"hi GradientLeft     background: #202020;
+"hi GradientRight    background: #202020;
+
+hi Indicator        background: black;
+
+hi Hint         color: white; background: #202020; padding: 0 3px 2px 4px; margin-top: 1em;
+hi HintElem     color: white; background: black;
+hi HintActive   color: white; background: #202020;
+
+hi StatusLine           color: white;   background: black;
+"hi StatusLineBroken     color: white;   background: #202020;
+"hi StatusLineSecure     color: white;   background: #002200;
+"hi StatusLineExtended   color: white;   background: #004400;
+
+hi CmdLine      color: white;   background: black;
+hi CmdOutput    color: white;   background: black;
+
+hi NonText      color: white;   background: black;
+
+hi ModeMsg      color: white;   background: black;
+hi ErrorMsg     color: white;   background: #202020;
+hi WarningMsg   color: white;   background: #202020;
+
+hi Question     color: white;   background: black;
+"hi Search       color: white;   background: #202020;

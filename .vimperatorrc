@@ -1,0 +1,12 @@
+set gui=nonavigation
+set toolbars+=nomenu,tabs
+set fc
+
+map Q :q<CR>
+
+map go :tabopen 
+
+map > :tabn <CR>
+map < :tabp <CR>
+
+colorscheme bronsa
