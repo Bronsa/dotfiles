@@ -1,13 +1,22 @@
 [user]
     name = Nicola Mometto
     email = brobronsa@gmail.com
+    signinkey = B060D6871BD5AEBC
 [core]
     editor = emacsclient -c -nw
-	attributesfile = /home/bronsa/.config/git/gitattributes
-	excludesfile = /home/bronsa/.gitignore
+    attributesfile = $HOME/.config/git/gitattributes
+    excludesfile = $HOME/.gitignore
 [push]
     default = simple
 [diff "clojure"]
-	xfuncname = (^\\(.*|\\s*\\(defn.*)
+    xfuncname = (^\\(.*|\\s*\\(defn.*)
+    compactionHeuristic = true
 [alias]
     g = grep --break --heading --line-number
+[rerere]
+    enabled = true
+[branch]
+    autoSetupRebase = always
+    autoSetupMerge = always
+[remote]
+    pushDefault = origin
