@@ -45,7 +45,7 @@ export GUARD_NOTIFY=false
 source .zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source .zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-bindkey "^[[1;5A" history-substring-search-up
-bindkey "^[[1;5B" history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
