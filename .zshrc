@@ -8,14 +8,10 @@ HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:halt:reboot"
 
 cd ~
 
-if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
-    eval $(ssh-agent -s) > /dev/null
-    if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
-        ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
-    fi
-fi
-
 setopt autocd
+
+/usr/bin/keychain -q --nogui $HOME/.ssh/id_ed25519
+source $HOME/.keychain/$(hostname)-sh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
@@ -24,8 +20,6 @@ PROMPT='[%~]> '
 export EDITOR="emacsclient -c -nw"
 export ALTERNATE_EDITOR=""
 export PATH=.:$HOME/bin:$PATH:/snap/bin
-export LANGUAGE=en
-export LANG=en_US.UTF-8
 alias emacs="emacsclient -c -nw"
 
 alias ls='ls --color=auto'
@@ -47,3 +41,11 @@ export GUARD_NOTIFY=false
 
 # opam configuration
 [[ ! -r /home/bronsa/.opam/opam-init/init.zsh ]] || source /home/bronsa/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+source .zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source .zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+bindkey "^[[1;5A" history-substring-search-up
+bindkey "^[[1;5B" history-substring-search-down
+
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
