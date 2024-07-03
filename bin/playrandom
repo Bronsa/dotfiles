@@ -1,4 +1,0 @@
-#!/bin/sh
-mpc clear;
-mpc search album "$(mpc list Album | sort -R | head -n 1)" | mpc add;
-mpc play

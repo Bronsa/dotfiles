@@ -1,6 +1,0 @@
-#!/bin/sh
-
-export DISPLAY=:0.0
-export XAUTHORITY=/home/bronsa/.Xauthority
-export HOME=/home/bronsa/
-feh --bg-fill --randomize ~/Images/wallpaper/*

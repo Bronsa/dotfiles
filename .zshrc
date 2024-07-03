@@ -30,9 +30,6 @@ alias la='ls -a'
 alias l=ls
 alias e=emacs
 
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
-
 portpid() {
     lsof -i 4tcp:$1 -sTCP:LISTEN -Fp
 }
@@ -41,6 +38,12 @@ export GUARD_NOTIFY=false
 
 # opam configuration
 [[ ! -r /home/bronsa/.opam/opam-init/init.zsh ]] || source /home/bronsa/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
+autoload -U select-word-style
+select-word-style bash
 
 source .zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source .zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh

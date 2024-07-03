@@ -33,7 +33,6 @@ set expandtab
 set ts=4
 set sw=4
 set isk+=_,$,@,%,#,- " none of these should be word dividers, so make them not be
-"set lz 
 set smarttab
 
 let mapleader=","
@@ -96,15 +95,6 @@ hi PmenuSel     ctermfg=None        ctermbg=234        cterm=Bold
 hi PmenuSbar    ctermfg=None        ctermbg=232    cterm=None
 hi PmenuThumb   ctermfg=None        ctermbg=237        cterm=None
 
-let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-n>"
-
-let g:slimv_python="/usr/bin/python"
-let g:slimv_lisp="/usr/bin/sbcl"
-let g:slimv_impl = 'sbcl'
-let g:slimv_clhs_root="http://www.lispworks.com/documentation/HyperSpec/"
-
 set fileencodings=utf-8
 set encoding=utf-8
 set termencoding=utf-8
@@ -119,8 +109,7 @@ map q :q<CR>
 map S :shell<CR>
 map W :w<CR>
 map s :s<CR>
-map t :tabnew<CR>:e 
+map t :tabnew<CR>:e
 map . <C-r>
 
-set spelllang=it
 set viminfo='10,\"100,:20,%,n~/.viminfo

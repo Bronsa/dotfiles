@@ -4,3 +4,9 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/Bronsa/.emacs.d.git
+[submodule ".zsh.d/zsh-history-substring-search"]
+	path = .zsh.d/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule ".zsh.d/zsh-syntax-highlighting"]
+	path = .zsh.d/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
