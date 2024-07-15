@@ -2,25 +2,24 @@ cd ~
 
 eval $(dircolors)
 
+zmodload zsh/complist
+autoload -Uz compinit && compinit
+autoload -U select-word-style
+
 zstyle ':completion:*:*:*:*:descriptions' format '%B-- %d --%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
 
-bindkey -M menuselect '^[[Z' reverse-menu-complete
-
-autoload -Uz compinit && compinit
-
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
-
-autoload -U select-word-style
 select-word-style bash
 
 source .zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source .zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
