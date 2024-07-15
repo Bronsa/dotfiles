@@ -2,6 +2,12 @@ cd ~
 
 eval $(dircolors)
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+PROMPT='[%~]> '
+
+setopt autocd
+
 zmodload zsh/complist
 autoload -Uz compinit && compinit
 autoload -U select-word-style
@@ -33,15 +39,6 @@ setopt histignorespace
 setopt histignoredups
 HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:halt:reboot"
 
-setopt autocd
-
-/usr/bin/keychain -q --nogui $HOME/.ssh/id_ed25519
-source $HOME/.keychain/$(hostname)-sh
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-PROMPT='[%~]> '
-
 export EDITOR="emacsclient -c -nw"
 export ALTERNATE_EDITOR=""
 export PATH=.:$HOME/bin:$PATH:/snap/bin
@@ -59,7 +56,8 @@ portpid() {
     lsof -i 4tcp:$1 -sTCP:LISTEN -Fp
 }
 
-export GUARD_NOTIFY=false
+/usr/bin/keychain -q --nogui $HOME/.ssh/id_ed25519
+source $HOME/.keychain/$(hostname)-sh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc'; fi
