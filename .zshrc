@@ -1,3 +1,31 @@
+cd ~
+
+eval $(dircolors)
+
+zstyle ':completion:*:*:*:*:descriptions' format '%B-- %d --%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
+
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+autoload -Uz compinit && compinit
+
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
+autoload -U select-word-style
+select-word-style bash
+
+source .zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source .zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -5,8 +33,6 @@ setopt appendhistory
 setopt histignorespace
 setopt histignoredups
 HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:halt:reboot"
-
-cd ~
 
 setopt autocd
 
@@ -36,22 +62,11 @@ portpid() {
 
 export GUARD_NOTIFY=false
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
 # opam configuration
 [[ ! -r /home/bronsa/.opam/opam-init/init.zsh ]] || source /home/bronsa/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
-
-autoload -U select-word-style
-select-word-style bash
-
-source .zsh.d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source .zsh.d/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
-HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
-
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-autoload -Uz compinit && compinit
