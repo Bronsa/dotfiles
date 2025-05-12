@@ -56,14 +56,3 @@ portpid() {
     lsof -i 4tcp:$1 -sTCP:LISTEN -Fp
 }
 
-/usr/bin/keychain -q --nogui $HOME/.ssh/id_ed25519
-source $HOME/.keychain/$(hostname)-sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc'; fi
-
-# opam configuration
-[[ ! -r /home/bronsa/.opam/opam-init/init.zsh ]] || source /home/bronsa/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
