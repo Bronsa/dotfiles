@@ -1,6 +1,6 @@
 [user]
     name = Nicola Mometto
-    email = me@bronsa.net
+    email = nicola.mometto@metabase.com
 [core]
     editor = emacsclient -c -nw
     attributesfile = $HOME/.config/git/gitattributes

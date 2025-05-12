@@ -56,3 +56,12 @@ portpid() {
     lsof -i 4tcp:$1 -sTCP:LISTEN -Fp
 }
 
+#/usr/bin/keychain -q --nogui $HOME/.ssh/id_ed25519
+#source $HOME/.keychain/$(hostname)-sh
+
+# fnm
+FNM_PATH="/home/bronsa/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/bronsa/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
