@@ -56,3 +56,21 @@ portpid() {
     lsof -i 4tcp:$1 -sTCP:LISTEN -Fp
 }
 
+
+# fnm
+FNM_PATH="/home/bronsa/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/bronsa/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$PATH:/opt/mssql-tools18/bin"
+
+
+export MB_EDITION=ee
+
