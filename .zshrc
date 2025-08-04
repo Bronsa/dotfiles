@@ -71,6 +71,4 @@ if [ -f '/home/bronsa/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bronsa
 if [ -f '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/bronsa/bin/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="$PATH:/opt/mssql-tools18/bin"
 
-
-export MB_EDITION=ee
-
+source ~/.mb_env
